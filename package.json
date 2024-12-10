@@ -1,0 +1,19 @@
+{
+  "name": "dnd_backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "repository": "https://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@github.com/F03-26/DnD_Backend.git",
+  "author": "F0326 <fernando.arevalo@uc.cl>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.15.3",
+    "koa-body": "^6.0.1",
+    "koa-logger": "^3.2.1",
+    "nodemon": "^3.1.7"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  }
+}
