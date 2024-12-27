@@ -3,9 +3,11 @@ const KoaLogger = require('koa-logger');
 const {koaBody} = require('koa-body');
 const router = require('./router.js');
 const orm = require('./models');
+const cors = require('@koa/cors');
 
 const app = new Koa();
 
+app.use(cors());
 app.context.orm = orm;
 
 app.use(KoaLogger());
@@ -14,7 +16,7 @@ app.use(koaBody());
 app.use(router.routes());
 
 app.use((ctx, next) => {
-    ctx.body = "Hola mundo"
+    ctx.body = "Ruta no encontrada."
 });
 
 /*

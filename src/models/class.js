@@ -10,18 +10,40 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.belongsTo(models.AbilityScore, {
+        as: 'Primary Ability 1',
+        foreignKey: 'primary_ability_1',
+        onDelete: 'SET NULL'
+      });
+      this.belongsTo(models.AbilityScore, {
+        as: 'Primary Ability 2',
+        foreignKey: 'primary_ability_2',
+        onDelete: 'SET NULL'
+      });
+      this.belongsTo(models.AbilityScore, {
+        as: 'Saving Throws 1',
+        foreignKey: 'saving_throws_1',
+        onDelete: 'SET NULL'
+      });
+      this.belongsTo(models.AbilityScore, {
+        as: 'Saving Throws 2',
+        foreignKey: 'saving_throws_2',
+        onDelete: 'SET NULL'
+      });
     }
   }
   Class.init({
     name: DataTypes.STRING,
     description: DataTypes.TEXT,
-    primary_ability_id: DataTypes.INTEGER,
+    primary_ability_1: DataTypes.INTEGER,
+    primary_ability_2: DataTypes.INTEGER,
     hit_point_die: DataTypes.STRING,
-    saving_throws: DataTypes.STRING,
+    saving_throws_1: DataTypes.INTEGER,
+    saving_throws_2: DataTypes.INTEGER,
     skill_profs: DataTypes.STRING,
     weapon_profs: DataTypes.STRING,
     armor_train: DataTypes.STRING,
+    tool_profs: DataTypes.STRING,
     start_equip: DataTypes.STRING
   }, {
     sequelize,

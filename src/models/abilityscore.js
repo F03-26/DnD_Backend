@@ -10,7 +10,22 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      this.hasMany(models.Class, {
+        foreignKey: 'primary_ability_1'
+      });
+      this.hasMany(models.Class, {
+        foreignKey: 'primary_ability_2'
+      });
+      this.hasMany(models.Class, {
+        foreignKey: 'saving_throws_1'
+      });
+      this.hasMany(models.Class, {
+        foreignKey: 'saving_throws_2'
+      });
+
+      this.hasMany(models.Tool, {
+        foreignKey: 'ability_id'
+      })
     }
   }
   AbilityScore.init({

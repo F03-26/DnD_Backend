@@ -15,7 +15,16 @@ module.exports = {
       description: {
         type: Sequelize.TEXT
       },
-      primary_ability_id: {
+      primary_ability_1: {
+        references: {
+          model: 'AbilityScores',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        type: Sequelize.INTEGER
+      },
+      primary_ability_2: {
         references: {
           model: 'AbilityScores',
           key: 'id'
@@ -27,8 +36,23 @@ module.exports = {
       hit_point_die: {
         type: Sequelize.STRING
       },
-      saving_throws: {
-        type: Sequelize.STRING
+      saving_throws_1: {
+        references: {
+          model: 'AbilityScores',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        type: Sequelize.INTEGER
+      },
+      saving_throws_2: {
+        references: {
+          model: 'AbilityScores',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
+        type: Sequelize.INTEGER
       },
       skill_profs: {
         type: Sequelize.STRING
@@ -37,6 +61,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       armor_train: {
+        type: Sequelize.STRING
+      },
+      tool_profs: {
         type: Sequelize.STRING
       },
       start_equip: {
