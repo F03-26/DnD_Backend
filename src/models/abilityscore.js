@@ -25,7 +25,11 @@ module.exports = (sequelize, DataTypes) => {
 
       this.hasMany(models.Tool, {
         foreignKey: 'ability_id'
-      })
+      });
+
+      this.hasMany(models.Abilities, {
+        foreignKey: 'ability_id'
+      });
     }
   }
   AbilityScore.init({
