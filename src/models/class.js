@@ -30,6 +30,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'saving_throws_2',
         onDelete: 'SET NULL'
       });
+
+      this.belongsToMany(models.Abilities, {through: models.ClassesAbilities, foreignKey: 'class_id', otherKey: 'ability_id'});
+      this.belongsToMany(models.Armor, {through: models.ClassesArmor, foreignKey: 'class_id', otherKey: 'armor_id'});
+      this.belongsToMany(models.Weapons, {through: models.ClassesWeapons, foreignKey: 'class_id', otherKey: 'weapon_id'});
+      this.belongsToMany(models.Gear, {through: models.ClassesGear, foreignKey: 'class_id', otherKey: 'gear_id'});
     }
   }
   Class.init({

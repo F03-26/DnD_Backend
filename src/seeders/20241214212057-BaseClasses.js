@@ -48,7 +48,7 @@ module.exports = {
     }, {
       id: 3,
       name: 'Mago',
-      description: 'Los magos son los supremos usua rios de la magia. Si algo define a esta clase es la gran cantidad de conjuros que puede lanzar. Tirando del sutil tejido mágico que permea el cosmos, lanzan conjuros de fuego explosivo, relámpagos súbitos, engaños sutiles y control mental. Su magia les permite conjurar elementales desde otros planos de existencia, vislumbrar el futuro o alzar enemigos fallecidos en forma de zombis. Sus conjuros más poderosos les permiten transmutar una sustancia en otra, invocar meteoros para que caigan desde el cielo o abrir portales a otros mundos.',
+      description: 'Los magos son los supremos usuarios de la magia. Si algo define a esta clase es la gran cantidad de conjuros que puede lanzar. Tirando del sutil tejido mágico que permea el cosmos, lanzan conjuros de fuego explosivo, relámpagos súbitos, engaños sutiles y control mental. Su magia les permite conjurar elementales desde otros planos de existencia, vislumbrar el futuro o alzar enemigos fallecidos en forma de zombis. Sus conjuros más poderosos les permiten transmutar una sustancia en otra, invocar meteoros para que caigan desde el cielo o abrir portales a otros mundos.',
       primary_ability_1: 4,
       primary_ability_2: null,
       hit_point_die: 'D6',
@@ -138,7 +138,7 @@ module.exports = {
       weapon_profs: 'Sencillas,Marciales ligeras',
       armor_train: null,
       tool_profs: '1,Herramientas de artesano;1,Instrumento musical',
-      start_equip: '1 Cota de malla, 1 Escudo, 1 Espada larga, 6 Jabalinas, 1 Símbolo sagrado, 1 Paquete de sacerdote, 9 GP;150 GP1 Lanza, 5 dagas, 1 herramientas de artesano o instrumento musical, 1 Paquete de explorador, 11 GP;50 GP',
+      start_equip: '1 Cota de malla, 1 Escudo, 1 Espada larga, 6 Jabalinas, 1 Símbolo sagrado, 1 Paquete de sacerdote, 9 GP;150 GP, 1 Lanza, 5 dagas, 1 herramientas de artesano o instrumento musical, 1 Paquete de explorador, 11 GP;50 GP',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {

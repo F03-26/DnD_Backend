@@ -3,11 +3,11 @@ const router = new Router();
 const { Op } = require('sequelize');
 const { context } = require("../app");
 
-// Crear habilidad
-router.post('abilities.create', '/', async(ctx) => {
+// Crear armadura
+router.post('armors.create', '/', async(ctx) => {
     try{
-        const ability = await ctx.orm.Abilities.create(ctx.request.body);
-        ctx.body = ability;
+        const armor = await ctx.orm.Armor.create(ctx.request.body);
+        ctx.body = armor;
         ctx.status = 201;
     }
     catch(error){
@@ -17,13 +17,13 @@ router.post('abilities.create', '/', async(ctx) => {
     }
 });
 
-// Ver todas las habilidades
-router.get('abilities.show', '/', async(ctx) => {
+// Ver todas las armaduras
+router.get('armors.show', '/', async(ctx) => {
     try{
-        const abilities = await ctx.orm.Abilities.findAll();
+        const armors = await ctx.orm.Armor.findAll();
         
-        if(abilities != []){
-            ctx.body = abilities;
+        if(armors != []){
+            ctx.body = armors;
             ctx.status = 200;
         }
         else{
@@ -32,7 +32,7 @@ router.get('abilities.show', '/', async(ctx) => {
     }
     catch(error){
         if(error.message == 'Not Found'){
-            ctx.body = { error: 'Abilities not found'}
+            ctx.body = { error: 'Armors not found'}
             ctx.status = 404;
         }
         else{
@@ -43,13 +43,13 @@ router.get('abilities.show', '/', async(ctx) => {
     }
 });
 
-// Ver habilidad específica por id
-router.get('abilities.index', '/:id', async(ctx) => {
+// Ver armadura específica por id
+router.get('armors.index', '/:id', async(ctx) => {
     try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
+        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
 
-        if(ability){
-            ctx.body = ability;
+        if(armor){
+            ctx.body = armor;
             ctx.status = 200;
         }
         else{
@@ -58,7 +58,7 @@ router.get('abilities.index', '/:id', async(ctx) => {
     }
     catch(error){
         if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
+            ctx.body = { error: 'Armor not found'}
             ctx.status = 404;
         }
         else{
@@ -69,16 +69,16 @@ router.get('abilities.index', '/:id', async(ctx) => {
     }
 });
 
-// Ver habilidad base por nombre
-router.get('abilities.name', '/name/:name', async(ctx) => {
+// Ver armaduras por nombre
+router.get('armors.name', '/name/:name', async(ctx) => {
     try{
-        const ability = await ctx.orm.Abilities.findOne({
+        const armor = await ctx.orm.Armor.findOne({
             where:{
                 [Op.and]:[{name: ctx.params.name}, {base: true}],
             },
         });
 
-        if(ability){
+        if(armor){
             ctx.body = ability;
             ctx.status = 200;
         }
@@ -99,21 +99,14 @@ router.get('abilities.name', '/name/:name', async(ctx) => {
     }
 });
 
-// Ver habilidades de una clase
-/*
-router.get('abilities.class', '/class/:id', async(ctx) => {
+// Actualizar armadura
+router.put('armors.update', '/:id', async(ctx) => {
     try{
-        const abilities = await ctx.orm.Abilities.findAll({
-            include: {
-                model: ctx.orm.Class,
-                attributes: [],
-                where: {class_id: ctx.params.id},
-                through: {attributes: []}
-            }
-        });
+        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
 
-        if(abilities != []){
-            ctx.body = abilities;
+        if(armor){
+            await armor.update(ctx.request.body);
+            ctx.body = armor;
             ctx.status = 200;
         }
         else{
@@ -122,35 +115,7 @@ router.get('abilities.class', '/class/:id', async(ctx) => {
     }
     catch(error){
         if(error.message == 'Not Found'){
-            ctx.body = { error: 'Abilities not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
-    }
-})
-    */
-
-// Actualizar habilidad
-router.put('abilities.update', '/:id', async(ctx) => {
-    try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
-
-        if(ability){
-            await ability.update(ctx.request.body);
-            ctx.body = ability;
-            ctx.status = 200;
-        }
-        else{
-            ctx.throw(404);
-        }
-    }
-    catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
+            ctx.body = { error: 'Armor not found'}
             ctx.status = 404;
         }
         else{
@@ -161,14 +126,14 @@ router.put('abilities.update', '/:id', async(ctx) => {
     }
 });
 
-// Eliminar habilidad
-router.delete('abilities.delete', '/:id', async(ctx) => {
+// Eliminar armadura
+router.delete('armors.delete', '/:id', async(ctx) => {
     try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
+        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
 
-        if(ability){
-            await ability.destroy();
-            ctx.body = ability;
+        if(armor){
+            await armor.destroy();
+            ctx.body = armor;
             ctx.status = 200;
         }
         else{
@@ -177,7 +142,7 @@ router.delete('abilities.delete', '/:id', async(ctx) => {
     }
     catch(error){
         if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
+            ctx.body = { error: 'Armor not found'}
             ctx.status = 404;
         }
         else{

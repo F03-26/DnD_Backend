@@ -69,6 +69,111 @@ router.get('classes.index', '/:id', async(ctx) => {
     }
 });
 
+// Ver habilidades por clase
+router.get('classes.abilities', '/abilities/:id', async(ctx) => {
+    try{
+        const abilities = await ctx.orm.Class.findAll({
+            where: {
+                id: ctx.params.id,
+            },
+            include: {
+                model: ctx.orm.Abilities,
+                through: {attributes: []},
+            },
+            attributes: []
+        });
+
+        if(abilities != []){
+            ctx.body = abilities;
+            ctx.status = 200;
+        }
+        else{
+            ctx.throw(404);
+        }
+    }
+    catch(error){
+        if(error.message == 'Not Found'){
+            ctx.body = { error: 'Class not found'}
+            ctx.status = 404;
+        }
+        else{
+            console.log(error.message);
+            ctx.body = {error: error.message};
+            ctx.status = 400;
+        }
+    }
+});
+
+// Ver armaduras por clase
+router.get('classes.armors', '/armor/:id', async(ctx) => {
+    try{
+        const armors = await ctx.orm.Class.findAll({
+            where: {
+                id: ctx.params.id,
+            },
+            include: {
+                model: ctx.orm.Armor,
+                through: {attributes: []},
+            },
+            attributes: []
+        });
+
+        if(armors != []){
+            ctx.body = armors;
+            ctx.status = 200;
+        }
+        else{
+            ctx.throw(404);
+        }
+    }
+    catch(error){
+        if(error.message == 'Not Found'){
+            ctx.body = { error: 'Class not found'}
+            ctx.status = 404;
+        }
+        else{
+            console.log(error.message);
+            ctx.body = {error: error.message};
+            ctx.status = 400;
+        }
+    }
+});
+
+// Ver armas por clase
+router.get('classes.weapons', '/weapons/:id', async(ctx) => {
+    try{
+        const weapons = await ctx.orm.Class.findAll({
+            where: {
+                id: ctx.params.id,
+            },
+            include: {
+                model: ctx.orm.Weapons,
+                through: {attributes: []},
+            },
+            attributes: []
+        });
+
+        if(weapons != []){
+            ctx.body = weapons;
+            ctx.status = 200;
+        }
+        else{
+            ctx.throw(404);
+        }
+    }
+    catch(error){
+        if(error.message == 'Not Found'){
+            ctx.body = { error: 'Class not found'}
+            ctx.status = 404;
+        }
+        else{
+            console.log(error.message);
+            ctx.body = {error: error.message};
+            ctx.status = 400;
+        }
+    }
+});
+
 // Actualizar clase
 router.put('classes.update', '/:id', async(ctx) => {
     try{
