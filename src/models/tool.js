@@ -15,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'ability_id',
         onDelete: 'SET NULL'
       })
+
+      this.belongsToMany(models.Background, {through: models.BackgroundsTools, foreignKey: 'tool_id', otherKey: 'background_id'});
     }
   }
   Tool.init({

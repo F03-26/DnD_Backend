@@ -332,6 +332,105 @@ module.exports = {
       profesion: null,
       createdAt: new Date(),
       updatedAt: new Date()
+    }, {
+      id: 30,
+      name: "Herramientas de artesano",
+      ability_id: null,
+      utilize: "Herramientas de artesano",
+      craft: null,
+      weight: null,
+      cost: null,
+      profesion: "Artesano",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 31,
+      name: "Instrumento musical",
+      ability_id: null,
+      utilize: "Instrumento musical",
+      craft: null,
+      weight: null,
+      cost: null,
+      profesion: "Artesano",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 32,
+      name: "Útiles para falsificar",
+      ability_id: 2,
+      utilize: "Imitar 10 o menos palabras manuscritas de otra persona (DC 15), o duplicar un sello de cera (DC 20).",
+      craft: null,
+      weight: 5,
+      cost: "15 GP",
+      profesion: null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 33,
+      name: "Juegos",
+      ability_id: null,
+      utilize: "Juegos",
+      craft: null,
+      weight: null,
+      cost: null,
+      profesion: "Juegos",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 34,
+      name: "Herramientas de navegante",
+      ability_id: 5,
+      utilize: "Trazar un rumbo (DC 10), o determinar la posicipon mirando las estrellas (DC 15).",
+      craft: null,
+      weight: 2,
+      cost: "25 GP",
+      profesion: null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 35,
+      name: "Dados",
+      ability_id: 5,
+      utilize: "Discernir si alguien está haciendo trampa (DC 10), o ganar la partida (DC 20).",
+      craft: null,
+      weight: 0,
+      cost: "1 GP",
+      profesion: "Juegos",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 36,
+      name: "Ajedrez dragón",
+      ability_id: 5,
+      utilize: "Discernir si alguien está haciendo trampa (DC 10), o ganar la partida (DC 20).",
+      craft: null,
+      weight: 0.5,
+      cost: "1 GP",
+      profesion: "Juegos",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 37,
+      name: "Apuesta de los tres dragones",
+      ability_id: 5,
+      utilize: "Discernir si alguien está haciendo trampa (DC 10), o ganar la partida (DC 20).",
+      craft: null,
+      weight: 0,
+      cost: "1 GP",
+      profesion: "Juegos",
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      id: 38,
+      name: "Naipes",
+      ability_id: 5,
+      utilize: "Discernir si alguien está haciendo trampa (DC 10), o ganar la partida (DC 20).",
+      craft: null,
+      weight: 0,
+      cost: "5 GP",
+      profesion: "Juegos",
+      createdAt: new Date(),
+      updatedAt: new Date()
     }])
   },
 

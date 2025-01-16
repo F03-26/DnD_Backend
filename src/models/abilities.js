@@ -17,6 +17,13 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       this.belongsTo(models.Class, {through: models.ClassesAbilities, foreignKey: 'ability_id', otherKey: 'class_id'});
+
+      this.hasMany(models.Background, {
+        foreignKey: 'skill_prof_1'
+      });
+      this.hasMany(models.Background, {
+        foreignKey: 'skill_prof_2'
+      });
     }
   }
   Abilities.init({
