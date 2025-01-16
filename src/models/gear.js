@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.belongsToMany(models.Class, {through: models.ClassesGear, foreignKey: 'gear_id', otherKey: 'class_id'});
-      this.belongsToMany(models.Background, {through: models.Background, foreignKey: 'gear_id', otherKey: 'background_id'});
+      this.belongsToMany(models.Background, {through: models.BackgroundsTools, foreignKey: 'gear_id', otherKey: 'background_id'});
     }
   }
   Gear.init({

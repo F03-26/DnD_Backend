@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.Weapons, {through: models.BackgroundsWeapons, foreignKey: 'background_id', otherKey: 'weapon_id'});
       this.belongsToMany(models.Gear, {through: models.BackgroundsWeapons, foreignKey: 'background_id', otherKey: 'gear_id'});
       this.belongsToMany(models.Coin, {through: models.BackgroundsCoin, foreignKey: 'background_id', otherKey: 'coin_id'});
-      this.belongsToMany(models.Tool, {through: BackgroundsTools, foreignKey: 'background_id', otherKey: 'tool_id'});
+      this.belongsToMany(models.Tool, {through: models.BackgroundsTools, foreignKey: 'background_id', otherKey: 'tool_id'});
     }
   }
   Background.init({
