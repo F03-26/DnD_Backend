@@ -2,15 +2,21 @@
   "name": "dnd_backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "https://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@github.com/F03-26/DnD_Backend.git",
   "author": "F0326 <fernando.arevalo@uc.cl>",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "dotenv": "^16.4.7",
     "koa": "^2.15.3",
     "koa-body": "^6.0.1",
+    "koa-cors": "^0.0.16",
     "koa-logger": "^3.2.1",
-    "nodemon": "^3.1.7"
+    "koa-router": "^13.0.1",
+    "nodemon": "^3.1.9",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sequelize-cli": "^6.6.2"
   },
   "scripts": {
     "start": "node src/index.js",
