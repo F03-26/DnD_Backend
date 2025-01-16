@@ -3,11 +3,11 @@ const router = new Router();
 const { Op } = require('sequelize');
 const { context } = require("../app");
 
-// Crear equipo
-router.post('gear.create', '/', async(ctx) => {
+// Crear moneda
+router.post('coins.create', '/', async(ctx) => {
     try{
-        const gear = await ctx.orm.Gear.create(ctx.request.body);
-        ctx.body = gear;
+        const coin = await ctx.orm.Coin.create(ctx.request.body);
+        ctx.body = coin;
         ctx.status = 201;
     }
     catch(error){
@@ -17,13 +17,13 @@ router.post('gear.create', '/', async(ctx) => {
     }
 });
 
-// Ver equipo
-router.get('gear.show', '/', async(ctx) => {
+// Ver monedas
+router.get('coins.show', '/', async(ctx) => {
     try{
-        const gears = await ctx.orm.Gear.findAll();
+        const coins = await ctx.orm.Coin.findAll();
         
-        if(gears != []){
-            ctx.body = gears;
+        if(coins != []){
+            ctx.body = coins;
             ctx.status = 200;
         }
         else{
@@ -32,7 +32,7 @@ router.get('gear.show', '/', async(ctx) => {
     }
     catch(error){
         if(error.message == 'Not Found'){
-            ctx.body = { error: 'Gears not found'}
+            ctx.body = { error: 'Coins not found'}
             ctx.status = 404;
         }
         else{
