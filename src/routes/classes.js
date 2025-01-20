@@ -20,7 +20,9 @@ router.post('classes.create', '/', async(ctx) => {
 // Ver clases
 router.get('classes.show', '/', async(ctx) => {
     try{
-        const classes = await ctx.orm.Class.findAll();
+        const classes = await ctx.orm.Class.findAll({
+            order: [['id', 'ASC']]
+        });
         
         if(classes != []){
             ctx.body = classes;

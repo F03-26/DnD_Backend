@@ -351,7 +351,7 @@ module.exports = {
       craft: null,
       weight: null,
       cost: null,
-      profesion: "Artesano",
+      profesion: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -373,7 +373,7 @@ module.exports = {
       craft: null,
       weight: null,
       cost: null,
-      profesion: "Juegos",
+      profesion: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
