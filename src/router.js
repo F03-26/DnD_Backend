@@ -22,6 +22,15 @@ const backgroundsgear = require("./routes/backgroundsgear.js");
 const backgroundscoin = require("./routes/backgroundscoins.js");
 const backgroundstool = require("./routes/backgroundstools.js");
 
+const authentication = require("./routes/authentication.js");
+const users = require("./routes/users.js");
+
+const jwtMiddleware = require("koa-jwt");   
+const dotenv = require("dotenv");
+dotenv.config();
+
+//====================================================================================
+
 const router = new Router();
 
 router.use('/ability_scores', ability_score.routes());
@@ -46,5 +55,10 @@ router.use('/backgroundsweapons', backgroundsweapons.routes());
 router.use('/backgroundsgear', backgroundsgear.routes());
 router.use('/backgroundscoins', backgroundscoin.routes());
 router.use('/backgroundstools', backgroundstool.routes());
+
+router.use(authentication.routes());
+
+router.use(jwtMiddleware({secret: process.env.JWT_SECRET}));
+router.use("/users", users.routes());
 
 module.exports = router; 
