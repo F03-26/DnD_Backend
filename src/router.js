@@ -8,6 +8,8 @@ const weapon = require("./routes/weapons.js");
 const gear = require("./routes/gears.js");
 const coin = require("./routes/coins.js");
 const feat = require("./routes/feats.js");
+const race = require('./routes/races.js');
+const trait = require('./routes/traits.js');
 
 const classescoins = require("./routes/classescoins.js");
 const classesarmor = require("./routes/classesarmor.js");
@@ -31,6 +33,8 @@ router.use('/weapons', weapon.routes());
 router.use('/gear', gear.routes());
 router.use('/coins', coin.routes());
 router.use('/feats', feat.routes());
+router.use('/races', race.routes());
+router.use('/traits', trait.routes());
 
 router.use('/classescoins', classescoins.routes());
 router.use('/classesarmor', classesarmor.routes());
