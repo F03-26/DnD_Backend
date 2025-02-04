@@ -1,7 +1,6 @@
 const Router = require("koa-router");
 const router = new Router();
 const { Op } = require('sequelize');
-const { context } = require("../app");
 
 // Crear habilidad
 router.post('abilities.create', '/', async(ctx) => {

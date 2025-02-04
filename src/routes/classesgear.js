@@ -1,8 +1,6 @@
 const Router = require("koa-router");
 const router = new Router();
 const { Op } = require('sequelize');
-const { context } = require("../app");
-
 router.get('classesgear.gear', '/:id', async(ctx) => {
     try{
         const gears = await ctx.orm.ClassesGear.findAll({

@@ -11,6 +11,7 @@ const feat = require("./routes/feats.js");
 const race = require('./routes/races.js');
 const trait = require('./routes/traits.js');
 const language = require('./routes/languages.js');
+const alignment = require('./routes/alignments.js');
 
 const classescoins = require("./routes/classescoins.js");
 const classesarmor = require("./routes/classesarmor.js");
@@ -46,6 +47,7 @@ router.use('/feats', feat.routes());
 router.use('/races', race.routes());
 router.use('/traits', trait.routes());
 router.use('/languages', language.routes());
+router.use('/alignments', alignment.routes());
 
 router.use('/classescoins', classescoins.routes());
 router.use('/classesarmor', classesarmor.routes());

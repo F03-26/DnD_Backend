@@ -41,6 +41,35 @@ router.get('ability_scores.show', '/', async(ctx) => {
     }
 });
 
+// Ver puntuaciones con habilidades
+router.get('ability_scores.abilities', '/abilities', async(ctx) => {
+    try {
+        const ability_scores = await ctx.orm.AbilityScore.findAll({
+            include: {
+                model: ctx.orm.Abilities
+            }
+        });
+        if(ability_scores != []){
+            ctx.body = ability_scores;
+            ctx.status = 200;
+        }
+        else {
+            ctx.throw(404);
+        }
+    }
+    catch(error){
+        if(error.message == 'Not Found'){
+            ctx.body = { error: 'Ability scores not found'}
+            ctx.status = 404;
+        }
+        else{
+            console.log(error.message);
+            ctx.body = {error: error.message};
+            ctx.status = 400;
+        }
+    }
+});
+
 // Ver puntuación específica
 router.get('ability_scores.index', '/:id', async(ctx) => {
     try {

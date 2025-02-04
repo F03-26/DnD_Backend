@@ -1,8 +1,6 @@
 const Router = require("koa-router");
 const router = new Router();
 const { Op } = require('sequelize');
-const { context } = require("../app");
-
 // Crear clase
 router.post('classes.create', '/', async(ctx) => {
     try{
