@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.Race, {
         foreignKey: 'race_id'
       })
+
+      this.belongsToMany(models.Character, {through: models.CharacterTrait, foreignKey: 'trait_id', otherKey: 'character_id'});
     }
   }
   Trait.init({

@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       this.hasMany(models.Abilities, {
-        foreignKey: 'ability_id'
+        foreignKey: 'ability_id',
+        
       });
 
       this.hasMany(models.Background, {

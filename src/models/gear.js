@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       this.belongsToMany(models.Class, {through: models.ClassesGear, foreignKey: 'gear_id', otherKey: 'class_id'});
       this.belongsToMany(models.Background, {through: models.BackgroundsGear, foreignKey: 'gear_id', otherKey: 'background_id'});
+      this.belongsToMany(models.Character, {through: models.CharacterGear, foreignKey: 'gear_id', otherKey: 'character_id'});
     }
   }
   Gear.init({

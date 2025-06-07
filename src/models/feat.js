@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const characterfeat = require('./characterfeat');
 module.exports = (sequelize, DataTypes) => {
   class Feat extends Model {
     /**
@@ -14,6 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Background, {
         foreignKey: 'feat_id'
       });
+
+      this.belongsToMany(models.Character, {through: models.CharacterFeat, foreignKey: 'feat_id', otherKey: 'character_id'});
     }
   }
   Feat.init({

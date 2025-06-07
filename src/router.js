@@ -12,11 +12,22 @@ const race = require('./routes/races.js');
 const trait = require('./routes/traits.js');
 const language = require('./routes/languages.js');
 const alignment = require('./routes/alignments.js');
+const proficiencies = require('./routes/proficiencies.js');
+const character = require('./routes/character.js');
 
 const classescoins = require("./routes/classescoins.js");
 const classesarmor = require("./routes/classesarmor.js");
 const classesweapons = require("./routes/classesweapons.js");
 const classesgear = require("./routes/classesgear.js");
+
+const characterarmor = require("./routes/characterarmor.js");
+const characterweapon = require("./routes/characterweapon.js");
+const charactergear = require("./routes/charactergear.js");
+const charactertool = require("./routes/charactertool.js");
+const characterfeat = require("./routes/characterfeat.js");
+const charactertrait = require("./routes/charactertrait.js");
+const characterspell = require("./routes/characterspell.js");
+const characterlanguage = require("./routes/characterlanguage.js");
 
 const background = require("./routes/backgrounds.js");
 const backgroundsweapons = require("./routes/backgroundsweapons.js");
@@ -48,11 +59,22 @@ router.use('/races', race.routes());
 router.use('/traits', trait.routes());
 router.use('/languages', language.routes());
 router.use('/alignments', alignment.routes());
+router.use('/proficiencies', proficiencies.routes());
+router.use('/character', character.routes());
 
 router.use('/classescoins', classescoins.routes());
 router.use('/classesarmor', classesarmor.routes());
 router.use('/classesweapons', classesweapons.routes());
 router.use('/classesgear', classesgear.routes());
+
+router.use('/characterarmor', characterarmor.routes());
+router.use('/characterweapon', characterweapon.routes());
+router.use('/charactergear', charactergear.routes());
+router.use('/charactertool', charactertool.routes());
+router.use('/characterfeat', characterfeat.routes());
+router.use('/charactertrait', charactertrait.routes());
+router.use('/characterspell', characterspell.routes());
+router.use('/characterlanguage', characterlanguage.routes());
 
 router.use('/backgrounds', background.routes());
 router.use('/backgroundsweapons', backgroundsweapons.routes());

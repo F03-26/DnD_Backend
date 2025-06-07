@@ -45,8 +45,12 @@ router.get('ability_scores.show', '/', async(ctx) => {
 router.get('ability_scores.abilities', '/abilities', async(ctx) => {
     try {
         const ability_scores = await ctx.orm.AbilityScore.findAll({
+            where: {
+                base: true,
+            },
+            order: [['id', 'ASC']],
             include: {
-                model: ctx.orm.Abilities
+                model: ctx.orm.Abilities,
             }
         });
         if(ability_scores != []){
