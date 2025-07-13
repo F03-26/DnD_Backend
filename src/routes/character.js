@@ -171,6 +171,39 @@ router.get('characters.index', '/:id', async(ctx) => {
             ctx.status = 400;
         }
     }
+});
+
+    router.get('characters.user', '/user/:id', async(ctx) => {
+        try{
+            const characters = await ctx.orm.Character.findAll({
+                where: {
+                    uid: ctx.params.id
+                },
+                include: [{
+                    model: ctx.orm.Class,
+                },{
+                    model: ctx.orm.Race,
+                }]
+            });
+            if(characters != []){
+                ctx.body = characters;
+                ctx.status = 200;
+            }
+            else{
+                ctx.throw(404);
+            }
+        }
+        catch(error){
+            if(error.message == 'Not Found'){
+                ctx.body = { error: 'Characters not found'}
+                ctx.status = 404;
+            }
+            else{
+                console.log(error.message);
+                ctx.body = {error: error.message};
+                ctx.status = 400;
+            }
+        }
 
     router.put('characters.hp', '/:id/hp', async(ctx) => {
         try{
