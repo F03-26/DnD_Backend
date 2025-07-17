@@ -28,7 +28,18 @@ module.exports = (sequelize, DataTypes) => {
       });
 
       this.hasMany(models.Abilities, {
-        foreignKey: 'ability_id'
+        foreignKey: 'ability_id',
+        
+      });
+
+      this.hasMany(models.Background, {
+        foreignKey: 'ability_score_1'
+      });
+      this.hasMany(models.Background, {
+        foreignKey: 'ability_score_2'
+      });
+      this.hasMany(models.Background, {
+        foreignKey: 'ability_score_3'
       });
     }
   }

@@ -9,7 +9,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 /* eslint-enable no-undef */
 
-const server = http.createServer(app.callback());
+const server = http.createServer(app);
 
 // const io = socketSetup(server);
 

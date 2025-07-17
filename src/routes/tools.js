@@ -1,185 +1,134 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
-const { context } = require("../app");
 
 // Crear herramienta
-router.post('tools.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const tool = await ctx.orm.Tool.create(ctx.request.body);
-        ctx.body = tool;
-        ctx.status = 201;
+        const tool = await req.orm.Tool.create(req.body);
+        res.status(201).json(tool);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todas las herramientas
-router.get('tools.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const tools = await ctx.orm.Tool.findAll();
+        const tools = await req.orm.Tool.findAll();
         
         if(tools != []){
-            ctx.body = tools;
-            ctx.status = 200;
+            res.status(200).json(tools);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tools not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tools not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver herramienta específica
-router.get('tools.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const tool = await ctx.orm.Tool.findByPk(ctx.params.id);
+        const tool = await req.orm.Tool.findByPk(req.params.id);
 
         if(tool){
-            ctx.body = tool;
-            ctx.status = 200;
+            res.status(200).json(tool);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tool not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tool not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver herramientas de una profesión específica
-router.get('tools.profesion', '/profesion/:profesion', async(ctx) => {
+router.get('/profesion/:profesion', async(req, res) => {
     try{
-        const tools = await ctx.orm.Tool.findAll({
+        const tools = await req.orm.Tool.findAll({
             where: {
-                profesion: ctx.params.profesion
+                profesion: req.params.profesion
             }
         });
         
         if(tools != []){
-            ctx.body = tools;
-            ctx.status = 200;
+            res.status(200).json(tools);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tools not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tools not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver herramientas por nombre
-router.get('tools.name', '/name/:name', async(ctx) => {
+router.get('/name/:name', async(req, res) => {
     try{
-        const tool = await ctx.orm.Tool.findOne({
+        const tool = await req.orm.Tool.findOne({
             where: {
-                name: ctx.params.name
+                name: req.params.name
             }
         });
         
         if(tool){
-            ctx.body = tool;
-            ctx.status = 200;
+            res.status(200).json(tool);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tool not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tool not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar herramienta
-router.put('tools.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try{
-        const tool = await ctx.orm.Tool.findByPk(ctx.params.id);
+        const tool = await req.orm.Tool.findByPk(req.params.id);
 
         if(tool){
-            await tool.update(ctx.request.body);
-            ctx.body = tool;
-            ctx.status = 200;
+            await tool.update(req.body);
+            res.status(200).json(tool);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tool not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tool not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar Herramienta
-router.delete('tools.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const tool = await ctx.orm.Tool.findByPk(ctx.params.id);
+        const tool = await ctx.orm.Tool.findByPk(req.params.id);
 
         if(tool){
             await tool.destroy();
-            ctx.body = tool;
-            ctx.status = 200;
+            res.status(204).json(tool);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tool not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tool not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

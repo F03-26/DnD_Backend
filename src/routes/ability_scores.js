@@ -1,123 +1,112 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
 // Crear puntucaiones
-router.post('ability_scores.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try {
-        const ability_score = await ctx.orm.AbilityScore.create(ctx.request.body);
-        ctx.body = ability_score;
-        ctx.status = 201;
+        const ability_score = await req.orm.AbilityScore.create(req.body);
+        res.status(201).json(ability_score);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver puntuaciones
-router.get('ability_scores.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try {
-        const ability_scores = await ctx.orm.AbilityScore.findAll();
+        const ability_scores = await req.orm.AbilityScore.findAll();
         if(ability_scores != []){
-            ctx.body = ability_scores;
-            ctx.status = 200;
+            res.status(200).json(ability_scores);
         }
         else {
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability scores not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability scores not found'}
-            ctx.status = 404;
+        console.log(error.message);
+        res.status(400).json({error: error.message});
+    }
+});
+
+// Ver puntuaciones con habilidades
+router.get('/abilities', async(req, res) => {
+    try {
+        const ability_scores = await req.orm.AbilityScore.findAll({
+            where: {
+                base: true,
+            },
+            order: [['id', 'ASC']],
+            include: {
+                model: req.orm.Abilities,
+            }
+        });
+        if(ability_scores != []){
+            res.status(200).json(ability_scores);
         }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
+        else {
+            res.status(404).json({ error: 'Ability scores not found'});
         }
+    }
+    catch(error){
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver puntuación específica
-router.get('ability_scores.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try {
-        const ability_score = await ctx.orm.AbilityScore.findByPk(ctx.params.id);
+        const ability_score = await req.orm.AbilityScore.findByPk(req.params.id);
 
         if(ability_score){
-            ctx.body = ability_score;
-            ctx.status = 200;
+            res.status(200).json(ability_score);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability score not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability score not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar puntuación
-router.put('ability_scores.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try {
-        const ability_score = await ctx.orm.AbilityScore.findByPk(ctx.params.id);
+        const ability_score = await req.orm.AbilityScore.findByPk(req.params.id);
 
         if(ability_score){
-            await ability_score.update(ctx.request.body);
-            ctx.body = ability_score;
-            ctx.status = 200;
+            await ability_score.update(req.body);
+            res.status(200).json(ability_score);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability score not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability score not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar puntuación
-router.delete('ability_scores.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try {
-        const ability_score = await ctx.orm.AbilityScore.findByPk(ctx.params.id);
+        const ability_score = await ctx.orm.AbilityScore.findByPk(req.params.id);
 
         if(ability_score){
             await ability_score.destroy();
-            ctx.body = ability_score;
-            ctx.status = 200;
+            res.status(204).json(ability_score);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability score not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability score not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
