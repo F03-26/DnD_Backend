@@ -1,100 +1,74 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
 // Crear habilidad
-router.post('abilities.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const ability = await ctx.orm.Abilities.create(ctx.request.body);
-        ctx.body = ability;
-        ctx.status = 201;
+        const ability = await req.orm.Abilities.create(req.body);
+        res.status(201).json(ability);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todas las habilidades
-router.get('abilities.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const abilities = await ctx.orm.Abilities.findAll();
+        const abilities = await req.orm.Abilities.findAll();
         
         if(abilities != []){
-            ctx.body = abilities;
-            ctx.status = 200;
+            res.status(201).json(abilities);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Abilities not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Abilities not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver habilidad específica por id
-router.get('abilities.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
+        const ability = await req.orm.Abilities.findByPk(req.params.id);
 
         if(ability){
-            ctx.body = ability;
-            ctx.status = 200;
+            res.status(200).json(ability);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver habilidad base por nombre
-router.get('abilities.name', '/name/:name', async(ctx) => {
+router.get('/name/:name', async(req, res) => {
     try{
-        const ability = await ctx.orm.Abilities.findOne({
+        const ability = await req.orm.Abilities.findOne({
             where:{
-                [Op.and]:[{name: ctx.params.name}, {base: true}],
+                [Op.and]:[{name: req.params.name}, {base: true}],
             },
         });
 
         if(ability){
-            ctx.body = ability;
-            ctx.status = 200;
+            res.status(200).json(ability);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
@@ -134,56 +108,40 @@ router.get('abilities.class', '/class/:id', async(ctx) => {
     */
 
 // Actualizar habilidad
-router.put('abilities.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
+        const ability = await req.orm.Abilities.findByPk(req.params.id);
 
         if(ability){
-            await ability.update(ctx.request.body);
-            ctx.body = ability;
-            ctx.status = 200;
+            await ability.update(req.body);
+            res.status(200).json(ability);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar habilidad
-router.delete('abilities.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const ability = await ctx.orm.Abilities.findByPk(ctx.params.id);
+        const ability = await req.orm.Abilities.findByPk(req.params.id);
 
         if(ability){
             await ability.destroy();
-            ctx.body = ability;
-            ctx.status = 200;
+            res.status(204).json(ability);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Ability not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

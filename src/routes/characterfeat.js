@@ -1,17 +1,15 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
-router.post('characterfeat.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const feat = await ctx.orm.CharacterFeat.create(ctx.request.body);
-        ctx.body = feat;
-        ctx.status = 201;
+        const feat = await req.orm.CharacterFeat.create(req.body);
+        res.status(201).json(feat);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 

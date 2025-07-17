@@ -1,15 +1,15 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op, where } = require('sequelize');
 
-router.get('backgroundstools.tools', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try {
-        const tools = await ctx.orm.BackgroundsTools.findAll({
+        const tools = await req.orm.BackgroundsTools.findAll({
             where: {
-                background_id: ctx.params.id
+                background_id: req.params.id
             },
             include: {
-                model: ctx.orm.Tool
+                model: req.orm.Tool
             }
         });
 
@@ -30,48 +30,32 @@ router.get('backgroundstools.tools', '/:id', async(ctx) => {
                 response.push(tool);
             }
 
-            ctx.body = response;
-            ctx.status = 200;
+            res.status(200).json(response);
         }
         else {
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tools not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tools not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.error(error.message);
+        res.status(400).json({ error: error.message });
     }
 });
 
-router.get('backgroundstools.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try {
-        const tools = await ctx.orm.BackgroundsTools.findAll();
+        const tools = await req.orm.BackgroundsTools.findAll();
 
         if(tools != []){
-            ctx.body = tools;
-            ctx.status = 200;
+            res.status(200).json(tools);
         }
         else {
-            ctx.throw(404);
+            res.status(404).json({ error: 'Tools not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Tools not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.error(error.message);
+        res.status(400).json({ error: error.message });
     }
 });
 

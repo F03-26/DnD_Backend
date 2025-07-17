@@ -1,15 +1,15 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op, where } = require('sequelize');
 
-router.get('backgroundsgear.gear', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try {
-        const gears = await ctx.orm.BackgroundsGear.findAll({
+        const gears = await req.orm.BackgroundsGear.findAll({
             where: {
-                background_id: ctx.params.id
+                background_id: req.params.id
             },
             include: {
-                model: ctx.orm.Gear
+                model: req.orm.Gear
             }
         });
 
@@ -32,23 +32,15 @@ router.get('backgroundsgear.gear', '/:id', async(ctx) => {
                 response.push(gear);
             }
 
-            ctx.body = response;
-            ctx.status = 200;
+            res.status(200).json(response);
         }
         else {
-            ctx.throw(404);
+            res.status(404).json({ error: 'Gears not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Gears not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.error(error.message);
+        res.status(400).json({ error: error.message });
     }
 });
 

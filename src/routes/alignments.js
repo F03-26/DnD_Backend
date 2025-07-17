@@ -1,124 +1,89 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
 // Crear alineamiento
-router.post('alignments.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const alignment = await ctx.orm.Alignment.create(ctx.request.body);
-        ctx.body = alignment;
-        ctx.status = 201;
+        const alignment = await req.orm.Alignment.create(req.body);
+        res.status(201).json(alignment);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todos los alineamientos
-router.get('alignments.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const alignments = await ctx.orm.Alignment.findAll();
+        const alignments = await req.orm.Alignment.findAll();
 
         if(alignments != []){
-            ctx.body = alignments;
-            ctx.status = 200;
+            res.status(200).json(alignments);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Alignments not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Alignments not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver alineamiento específico
-router.get('alignments.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const alignment = await ctx.orm.Alignment.findByPk(ctx.params.id);
+        const alignment = await req.orm.Alignment.findByPk(req.params.id);
 
         if(alignment){
-            ctx.body = alignment;
-            ctx.status = 200;
+            res.status(200).json(alignment);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Alignment not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Alignment not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar alineamiento
-router.patch('alignments.update', '/:id', async(ctx) => {
+router.patch('/:id', async(req, res) => {
     try{
-        const alignment = await ctx.orm.Alignment.findByPk(ctx.params.id);
+        const alignment = await req.orm.Alignment.findByPk(res.params.id);
 
         if(alignment){
-            await alignment.update(ctx.request.body);
-            ctx.body = alignment;
-            ctx.status = 200;
+            await alignment.update(req.body);
+            res.status(200).json(alignment);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Alignment not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Alignment not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar alineamiento
-router.delete('alignments.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const alignment = await ctx.orm.Alignment.findByPk(ctx.params.id);
+        const alignment = await req.orm.Alignment.findByPk(req.params.id);
 
         if(alignment){
             await alignment.destroy();
-            ctx.body = alignment;
-            ctx.status = 200;
+            res.status(204).json(alignment);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Alignment not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Alignment not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

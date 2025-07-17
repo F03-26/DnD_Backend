@@ -1,230 +1,197 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
-router.post('characters.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const character = await ctx.orm.Character.create(ctx.request.body);
-        ctx.body = character;
-        ctx.status = 201;
+        const character = await req.orm.Character.create(req.body);
+        res.status(201).json(character)
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
-module.exports = router;
-
-router.get('characters.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const characters = await ctx.orm.Character.findAll({
+        const characters = await req.orm.Character.findAll({
             include: [{
-                model: ctx.orm.Armor,
+                model: req.orm.Armor,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Weapons,
+                model: req.orm.Weapons,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Feat,
+                model: req.orm.Feat,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Language,
+                model: req.orm.Language,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Gear,
+                model: req.orm.Gear,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Spell,
+                model: req.orm.Spell,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Tool,
+                model: req.orm.Tool,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Trait,
+                model: req.orm.Trait,
                 through: {attributes: []},
             }]
         });
         
         if(characters != []){
-            ctx.body = characters;
-            ctx.status = 200;
+            res.status(200).json(characters);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({error: "Characters not found"});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Characters not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
-router.get('characters.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const characters = await ctx.orm.Character.findOne({
+        const characters = await req.orm.Character.findOne({
             where: {
-                id: ctx.params.id
+                id: req.params.id
             },
 
             include: [
             {
-                model: ctx.orm.Class,
+                model: req.orm.Class,
             },
             {
-                model: ctx.orm.Race,
+                model: req.orm.Race,
             },
             {
-                model: ctx.orm.Armor,
+                model: req.orm.Armor,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Weapons,
+                model: req.orm.Weapons,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Feat,
+                model: req.orm.Feat,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Language,
+                model: req.orm.Language,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Gear,
+                model: req.orm.Gear,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Spell,
+                model: req.orm.Spell,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Tool,
+                model: req.orm.Tool,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Trait,
+                model: req.orm.Trait,
                 through: {attributes: []},
             },
             {
-                model: ctx.orm.Proficiency,
+                model: req.orm.Proficiency,
                 as: 'profs',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'strength',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'dexterity',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'constitution',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'inteligence',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'wisdom',
             },
             {
-                model: ctx.orm.AbilityScore,
+                model: req.orm.AbilityScore,
                 as: 'charisma',
             }
         ]
         });
         
         if(characters != []){
-            ctx.body = characters;
-            ctx.status = 200;
+            res.status(200).json(characters);
         }
         else{
             ctx.throw(404);
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Characters not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
     }
 });
 
-    router.get('characters.user', '/user/:id', async(ctx) => {
+    router.get('/user/:id', async(req, res) => {
         try{
-            const characters = await ctx.orm.Character.findAll({
+            const characters = await req.orm.Character.findAll({
                 where: {
-                    uid: ctx.params.id
+                    uid: req.params.id
                 },
                 include: [{
-                    model: ctx.orm.Class,
+                    model: req.orm.Class,
                 },{
-                    model: ctx.orm.Race,
+                    model: req.orm.Race,
                 }]
             });
             if(characters != []){
-                ctx.body = characters;
-                ctx.status = 200;
+                res.status(200).json(characters);
             }
             else{
-                ctx.throw(404);
+                res.status(404).json({error: "Characters not found"});
             }
         }
         catch(error){
-            if(error.message == 'Not Found'){
-                ctx.body = { error: 'Characters not found'}
-                ctx.status = 404;
-            }
-            else{
-                console.log(error.message);
-                ctx.body = {error: error.message};
-                ctx.status = 400;
-            }
+            console.log(error.message);
+            res.status(400).json({error: error.message});
         }
 
-    router.put('characters.hp', '/:id/hp', async(ctx) => {
+    router.put('/:id/hp', async(req, res) => {
         try{
-            const character = ctx.orm.Character.findByPk(ctx.params.id);
+            const character = req.orm.Character.findByPk(req.params.id);
             if(character){
-                await character.update({hit_points: ctx.request.body});
+                await character.update({hit_points: req.body});
+                res.status(200).json(character);
             }
             else{
-                ctx.throw(404);
+                res.status(404).json({error: 'character not found'});
             }
         }
         catch(error){
-            if(error.message == 'Not Found'){
-                ctx.body = { error: 'Character not found'}
-                ctx.status = 404;
-            }
-            else{
-                console.log(error.message);
-                ctx.body = {error: error.message};
-                ctx.status = 400;
-            }
+            console.log(error.message);
+            res.status(400).json({error: error.message});
         }
     })
 });
+
+module.exports = router;

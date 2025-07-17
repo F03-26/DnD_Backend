@@ -1,42 +1,34 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op, where } = require('sequelize');
 
 // Ver todas las razas
-router.get('races.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const races = await ctx.orm.Race.findAll()
+        const races = await req.orm.Race.findAll()
 
         if(races != []){
-            ctx.body = races;
-            ctx.status = 200;
+            res.status(200).json(races);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Races not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Races not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver raza específica con rasgos
-router.get('races.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const race = await ctx.orm.Race.findOne({
+        const race = await req.orm.Race.findOne({
             where: {
-                id: ctx.params.id
+                id: req.params.id
             },
             include: {
-                model: ctx.orm.Trait,
+                model: req.orm.Trait,
                 attributes: ['id', 'name', 'description']
             }
         });
@@ -61,23 +53,15 @@ router.get('races.index', '/:id', async(ctx) => {
                     item: 'trait'
                 }
             }
-            ctx.body = r;
-            ctx.status = 200;
+            res.status(200).json(r);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Race not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Race not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

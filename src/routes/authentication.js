@@ -1,5 +1,5 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 var jwt = require("jsonwebtoken");
 
@@ -7,22 +7,21 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 // Registro
-router.post('authentication.signup', '/signup', async(ctx) => {
-    const authInfo = ctx.request.body;
-    let user = await ctx.orm.User.findOne({
+router.post('/signup', async(req, res) => {
+    const authInfo = req.body;
+    let user = await req.orm.User.findOne({
         where: {
             email: authInfo.email
         }
     });
 
     if(user){
-        ctx.body = `The user by mail ${authInfo.email} already exists.`
-        ctx.status = 400;
+        res.status(400).json({error: `The user by email '${authInfo.email}' already exists.`});
         return;
     }
     
     try{
-        user = await ctx.orm.User.create({
+        user = await req.orm.User.create({
             username: authInfo.username,
             password: authInfo.password,
             email: authInfo.email,
@@ -30,51 +29,51 @@ router.post('authentication.signup', '/signup', async(ctx) => {
         })
     }
     catch(error){
-        ctx.body = error;
-        ctx.status = 400;
+        console.log(error.message);
+        res.status(400).json({error: error.message});
         return;
     }
 
-    ctx.body = {
+    res.status(201).json({
+        id: user.id,
         username: user.username,
         email: user.email,
         role: user.role
-    };
-    ctx.status = 201;
+    });
 });
 
 // Inicio de Sesión
-router.post('authentication.login', '/login', async(ctx) => {
+router.post('/login', async(req, res) => {
     let user;
-    const authInfo = ctx.request.body;
+    const authInfo = req.body;
     try{
-        user = await ctx.orm.User.findOne({
+        user = await req.orm.User.findOne({
             where: {
                 email: authInfo.email
             }
         });
     }
     catch(error){
-        ctx.body = error;
-        ctx.status = 400;
+        console.log(error.message);
+        res.status(400).json({error: error.message});
         return;
     }
     if(!user){
-        ctx.body = `The user by email '${authInfo.email}' was not found.`;
-        ctx.status = 400;
+        res.status(404).json({error: `User with email '${authInfo.email}' not found.`});
         return;
     }
     
     if(user.password == authInfo.password){
-        ctx.body = {
+        res.status(200).json({
+            id: user.id,
             username: user.username,
-            email: user.email
-        };
-        ctx.status = 200;
+            email: user.email,
+            role: user.role
+        });
     }
     else{
-        ctx.body = 'Incorrect password';
-        ctx.status = 400;
+        res.status(401).json({error: 'Invalid password.'});
+        console.log(`Invalid password for user with email '${authInfo.email}'.`);
         return;
     }
 
@@ -87,14 +86,13 @@ router.post('authentication.login', '/login', async(ctx) => {
         {subject: user.id.toString()},
         {expiresIn: expirationSeconds}
     );
-    ctx.body = {
-        "access_token": token,
-        "token_type": "Bearer",
-        "expires_in": expirationSeconds,
+    res.status(200).json({
         id: user.id,
-        username: user.username
-    }
-    ctx.status = 200;
+        username: user.username,
+        email: user.email,
+        role: user.role,
+        token: token
+    });
 });
 
 module.exports = router;

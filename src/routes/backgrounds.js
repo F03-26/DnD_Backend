@@ -1,126 +1,90 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
 // Crear trasfondo
-router.post('backgrounds.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const background = await ctx.orm.Background.create(ctx.request.body);
-        ctx.body = background;
-        ctx.status = 201;
+        const background = await req.orm.Background.create(req.body);
+        res.status(201).json(background);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver trasfondos
-router.get('backgrounds.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const backgrounds = await ctx.orm.Background.findAll();
+        const backgrounds = await req.orm.Background.findAll();
         
         if(backgrounds != []){
-            ctx.body = backgrounds;
-            ctx.status = 200;
+            res.status(200).json(backgrounds);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Backgrounds not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Backgrounds not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
-module.exports = router;
-
 // Ver trasfondo específico
-router.get('backgrounds.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const background = await ctx.orm.Background.findByPk(ctx.params.id);
+        const background = await req.orm.Background.findByPk(req.params.id);
 
         if(background){
-            ctx.body = background;
-            ctx.status = 200;
+            res.status(200).json(background);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Background not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Background not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar trasfondo
-router.put('backgrounds.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try{
-        const background = await ctx.orm.Background.findByPk(ctx.params.id);
+        const background = await req.orm.Background.findByPk(req.params.id);
 
         if(background){
-            await background.update(ctx.request.body);
-            ctx.body = background;
-            ctx.status = 200;
+            await background.update(req.body);
+            res.status(200).json(background);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Background not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Background not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar Clase
-router.delete('backgrounds.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const background = await ctx.orm.Background.findByPk(ctx.params.id);
+        const background = await req.orm.Background.findByPk(req.params.id);
 
         if(background){
             await background.destroy();
-            ctx.body = background;
-            ctx.status = 200;
+            res.status(204).json(background);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Background not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Background not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

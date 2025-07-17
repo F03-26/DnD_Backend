@@ -1,44 +1,34 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 
 // Crear moneda
-router.post('coins.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const coin = await ctx.orm.Coin.create(ctx.request.body);
-        ctx.body = coin;
-        ctx.status = 201;
+        const coin = await req.orm.Coin.create(req.body);
+        res.status(201).json(coin);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({ error: 'An error occurred while creating the coin' });
     }
 });
 
 // Ver monedas
-router.get('coins.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const coins = await ctx.orm.Coin.findAll();
+        const coins = await req.orm.Coin.findAll();
         
         if(coins != []){
-            ctx.body = coins;
-            ctx.status = 200;
+            res.status(200).json(coins);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Coins not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Coins not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({ error: 'An error occurred while fetching coins' });
     }
 });
 

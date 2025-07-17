@@ -1,17 +1,15 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 
 // Crear Proficiencia
-router.post('proficiencies.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try {
-        const proficiency = await ctx.orm.Proficiency.create(ctx.request.body);
-        ctx.body = proficiency;
-        ctx.status = 201;
+        const proficiency = await req.orm.Proficiency.create(req.body);
+        res.status(201).json(proficiency);
     } catch (error) {
         console.log(error.message);
-        ctx.body = { error: error.message };
-        ctx.status = 400;
+        res.status(400).json({ error: error.message });
     }
 });
 

@@ -1,4 +1,4 @@
-const Router = require("koa-router");
+const express = require('express');
 const ability_score = require('./routes/ability_scores.js');
 const class_ = require("./routes/classes.js");
 const tool = require("./routes/tools.js");
@@ -13,6 +13,7 @@ const trait = require('./routes/traits.js');
 const language = require('./routes/languages.js');
 const alignment = require('./routes/alignments.js');
 const proficiencies = require('./routes/proficiencies.js');
+const spells = require('./routes/spells.js');
 const character = require('./routes/character.js');
 
 const classescoins = require("./routes/classescoins.js");
@@ -38,53 +39,53 @@ const backgroundstool = require("./routes/backgroundstools.js");
 const authentication = require("./routes/authentication.js");
 const users = require("./routes/users.js");
 
-const jwtMiddleware = require("koa-jwt");   
+const { expressjwt: jwtMiddleware } = require("express-jwt");
 const dotenv = require("dotenv");
 dotenv.config();
 
 //====================================================================================
 
-const router = new Router();
+const router = new express.Router();
 
-router.use('/ability_scores', ability_score.routes());
-router.use('/classes', class_.routes());
-router.use('/tools', tool.routes());
-router.use('/abilities', ability.routes());
-router.use('/armor', armor.routes());
-router.use('/weapons', weapon.routes());
-router.use('/gear', gear.routes());
-router.use('/coins', coin.routes());
-router.use('/feats', feat.routes());
-router.use('/races', race.routes());
-router.use('/traits', trait.routes());
-router.use('/languages', language.routes());
-router.use('/alignments', alignment.routes());
-router.use('/proficiencies', proficiencies.routes());
-router.use('/character', character.routes());
+router.use('/ability_scores', ability_score);
+router.use('/classes', class_);
+router.use('/tools', tool);
+router.use('/abilities', ability);
+router.use('/armor', armor);
+router.use('/weapons', weapon);
+router.use('/gear', gear);
+router.use('/coins', coin);
+router.use('/feats', feat);
+router.use('/races', race);
+router.use('/traits', trait);
+router.use('/languages', language);
+router.use('/alignments', alignment);
+router.use('/proficiencies', proficiencies);
+router.use('/spells', spells);
+router.use('/character', character);
 
-router.use('/classescoins', classescoins.routes());
-router.use('/classesarmor', classesarmor.routes());
-router.use('/classesweapons', classesweapons.routes());
-router.use('/classesgear', classesgear.routes());
+router.use('/classescoins', classescoins);
+router.use('/classesarmor', classesarmor);
+router.use('/classesweapons', classesweapons);
+router.use('/classesgear', classesgear);
 
-router.use('/characterarmor', characterarmor.routes());
-router.use('/characterweapon', characterweapon.routes());
-router.use('/charactergear', charactergear.routes());
-router.use('/charactertool', charactertool.routes());
-router.use('/characterfeat', characterfeat.routes());
-router.use('/charactertrait', charactertrait.routes());
-router.use('/characterspell', characterspell.routes());
-router.use('/characterlanguage', characterlanguage.routes());
+router.use('/characterarmor', characterarmor);
+router.use('/characterweapon', characterweapon);
+router.use('/charactergear', charactergear);
+router.use('/charactertool', charactertool);
+router.use('/characterfeat', characterfeat);
+router.use('/charactertrait', charactertrait);
+router.use('/characterspell', characterspell);
+router.use('/characterlanguage', characterlanguage);
 
-router.use('/backgrounds', background.routes());
-router.use('/backgroundsweapons', backgroundsweapons.routes());
-router.use('/backgroundsgear', backgroundsgear.routes());
-router.use('/backgroundscoins', backgroundscoin.routes());
-router.use('/backgroundstools', backgroundstool.routes());
+router.use('/backgrounds', background);
+router.use('/backgroundsweapons', backgroundsweapons);
+router.use('/backgroundsgear', backgroundsgear);
+router.use('/backgroundscoins', backgroundscoin);
+router.use('/backgroundstools', backgroundstool);
 
-router.use(authentication.routes());
+router.use(authentication);
 
-router.use(jwtMiddleware({secret: process.env.JWT_SECRET}));
-router.use("/users", users.routes());
+router.use("/users", jwtMiddleware({secret: process.env.JWT_SECRET, algorithms: ["HS256"]}), users);
 
 module.exports = router; 

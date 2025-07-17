@@ -1,154 +1,112 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require("express");
+const router = new express.Router();
 const { Op } = require('sequelize');
 
 // Crear armadura
-router.post('armors.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const armor = await ctx.orm.Armor.create(ctx.request.body);
-        ctx.body = armor;
-        ctx.status = 201;
+        const armor = await req.orm.Armor.create(req.body);
+        res.status(201).json(armor);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todas las armaduras
-router.get('armors.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const armors = await ctx.orm.Armor.findAll();
+        const armors = await req.orm.Armor.findAll();
         
         if(armors != []){
-            ctx.body = armors;
-            ctx.status = 200;
+            res.status(200).json(armors);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Armors not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armors not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        res.status(400).json({error: error.message});
+        console.log(error.message);
     }
 });
 
 // Ver armadura específica por id
-router.get('armors.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
+        const armor = await req.orm.Armor.findByPk(req.params.id);
 
         if(armor){
-            ctx.body = armor;
-            ctx.status = 200;
+            res.status(200).json(armor);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Armor not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armor not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver armaduras por nombre
-router.get('armors.name', '/name/:name', async(ctx) => {
+router.get('/name/:name', async(req, res) => {
     try{
-        const armor = await ctx.orm.Armor.findOne({
+        const armor = await req.orm.Armor.findOne({
             where:{
-                [Op.and]:[{name: ctx.params.name}, {base: true}],
+                [Op.and]:[{name: req.params.name}, {base: true}],
             },
         });
 
         if(armor){
-            ctx.body = ability;
-            ctx.status = 200;
+            res.status(200).json(armor);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Armor not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Ability not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar armadura
-router.put('armors.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try{
-        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
+        const armor = await req.orm.Armor.findByPk(req.params.id);
 
         if(armor){
-            await armor.update(ctx.request.body);
-            ctx.body = armor;
-            ctx.status = 200;
+            await armor.update(req.body);
+            res.status(200).json(armor);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Armor not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armor not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar armadura
-router.delete('armors.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const armor = await ctx.orm.Armor.findByPk(ctx.params.id);
+        const armor = await req.orm.Armor.findByPk(req.params.id);
 
         if(armor){
             await armor.destroy();
-            ctx.body = armor;
-            ctx.status = 200;
+            res.status(204).json(armor);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Armor not found'});
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armor not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

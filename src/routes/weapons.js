@@ -1,154 +1,112 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 
 // Crear arma
-router.post('weapons.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const weapon = await ctx.orm.Weapons.create(ctx.request.body);
-        ctx.body = weapon;
-        ctx.status = 201;
+        const weapon = await req.orm.Weapons.create(req.body);
+        res.status(201).json(weapon);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todas las armas
-router.get('weapons.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const weapons = await ctx.orm.Weapons.findAll();
+        const weapons = await req.orm.Weapons.findAll();
         
         if(weapons != []){
-            ctx.body = weapons;
-            ctx.status = 200;
+            res.status(200).json(weapons);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Weapons not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Weapons not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver arma específica por id
-router.get('weapons.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const weapon = await ctx.orm.Weapons.findByPk(ctx.params.id);
+        const weapon = await req.orm.Weapons.findByPk(req.params.id);
 
         if(weapon){
-            ctx.body = weapon;
-            ctx.status = 200;
+            res.status(200).json(weapon);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Weapon not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Weapons not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver armas por nombre
-router.get('weapons.name', '/name/:name', async(ctx) => {
+router.get('/name/:name', async(req, res) => {
     try{
-        const weapons = await ctx.orm.Weapons.findOne({
+        const weapons = await req.orm.Weapons.findOne({
             where:{
-                [Op.and]:[{name: ctx.params.name}, {base: true}],
+                [Op.and]:[{name: req.params.name}, {base: true}],
             },
         });
 
         if(weapons){
-            ctx.body = weapons;
-            ctx.status = 200;
+            res.status(200).json(weapons);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Weapon not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Weapon not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar arma
-router.put('weapons.update', '/:id', async(ctx) => {
+router.put('/:id', async(req, res) => {
     try{
-        const weapon = await ctx.orm.Weapons.findByPk(ctx.params.id);
+        const weapon = await req.orm.Weapons.findByPk(req.params.id);
 
         if(weapon){
-            await weapon.update(ctx.request.body);
-            ctx.body = weapon;
-            ctx.status = 200;
+            await weapon.update(req.body);
+            res.status(200).json(weapon);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Weapon not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armor not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar arma
-router.delete('weapons.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const weapon = await ctx.orm.Weapons.findByPk(ctx.params.id);
+        const weapon = await ctx.orm.Weapons.findByPk(req.params.id);
 
         if(weapon){
             await weapon.destroy();
-            ctx.body = weapon;
-            ctx.status = 200;
+            res.status(204).json(weapon);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Weapon not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Armor not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

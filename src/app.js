@@ -1,22 +1,25 @@
-const Koa = require('koa');
-const KoaLogger = require('koa-logger');
-const {koaBody} = require('koa-body');
+const express = require('express');
+const morgan = require('morgan');
+const cors = require('cors');
 const router = require('./router.js');
 const orm = require('./models');
-const cors = require('@koa/cors');
 
-const app = new Koa();
+const app = express();
 
 app.use(cors());
-app.context.orm = orm;
 
-app.use(KoaLogger());
-app.use(koaBody());
+app.use(express.json());
+app.use(morgan('dev'));
 
-app.use(router.routes());
+app.use((req, res, next) => {
+    req.orm = orm;
+    next();
+});
 
-app.use((ctx, next) => {
-    ctx.body = "Ruta no encontrada."
+app.use(router);
+
+app.use((err, req, res, next) => {
+    res.status(404).send('ruta no encontrada');
 });
 
 /*

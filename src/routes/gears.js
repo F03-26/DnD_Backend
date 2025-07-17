@@ -1,55 +1,45 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 
 // Crear equipo
-router.post('gear.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const gear = await ctx.orm.Gear.create(ctx.request.body);
-        ctx.body = gear;
-        ctx.status = 201;
+        const gear = await req.orm.Gear.create(req.body);
+        res.status(201).json(gear);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({ error: error.message });
     }
 });
 
 // Ver equipo
-router.get('gear.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const gears = await ctx.orm.Gear.findAll();
+        const gears = await req.orm.Gear.findAll();
         
         if(gears != []){
-            ctx.body = gears;
-            ctx.status = 200;
+            res.status(200).json(gears);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Gears not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Gears not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
     }
 });
 
-router.get('gear.showById', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const gear = await ctx.orm.Gear.findOne({
+        const gear = await req.orm.Gear.findOne({
             where: {
-                id: ctx.params.id
+                id: req.params.id
             },
             include: [{
-                model: ctx.orm.Gear,
+                model: req.orm.Gear,
                 as: 'bundle',
                 through: {
                     attributes: ['amount'] // Include amount from GearBundle
@@ -58,23 +48,15 @@ router.get('gear.showById', '/:id', async(ctx) => {
         });
         
         if(gear){
-            ctx.body = gear;
-            ctx.status = 200;
+            res.status(200).json(gear);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Gear not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Gear not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
     }
 });
 

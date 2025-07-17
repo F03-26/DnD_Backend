@@ -1,185 +1,134 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 const language = require("../models/language");
 
 // Crear lenguaje
-router.post('languages.create', '/', async(ctx) => {
+router.post('/', async(req, res) => {
     try{
-        const language = await ctx.orm.Language.create(ctx.request.body);
-        ctx.body = language;
-        ctx.status = 201;
+        const language = await req.orm.Language.create(req.body);
+        res.status(201).json(language);
     }
     catch(error){
         console.log(error.message);
-        ctx.body = {error: error.message};
-        ctx.status = 400;
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todos los lenguajes
-router.get('languages.show', '/', async(ctx) => {
+router.get('/', async(req, res) => {
     try{
-        const languages = await ctx.orm.Language.findAll();
+        const languages = await req.orm.Language.findAll();
         
         if(languages != []){
-            ctx.body = languages;
-            ctx.status = 200;
+            res.status(200).json(languages);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Languages not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Languages not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todos los lenguajes comunes
-router.get('languages.common', '/common', async(ctx) => {
+router.get('/common', async(req, res) => {
     try{
-        const languages = await ctx.orm.Language.findAll({
+        const languages = await req.orm.Language.findAll({
             where: {
                 rare: false
             }
         });
         
         if(languages != []){
-            ctx.body = languages;
-            ctx.status = 200;
+            res.status(200).json(languages);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Languages not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Languages not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver todos los lenguajes exóticos
-router.get('languages.rare', '/rare', async(ctx) => {
+router.get('/rare', async(req, res) => {
     try{
-        const languages = await ctx.orm.Language.findAll({
+        const languages = await req.orm.Language.findAll({
             where: {
                 rare: true
             }
         });
         
         if(languages != []){
-            ctx.body = languages;
-            ctx.status = 200;
+            res.status(200).json(languages);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Languages not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Languages not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Ver lenguaje específico
-router.get('languages.index', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const language = await ctx.orm.Language.findByPk(ctx.params.id);
+        const language = await req.orm.Language.findByPk(req.params.id);
 
         if(language){
-            ctx.body = language;
-            ctx.status = 200;
+            res.status(200).json(language);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Language not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Languages not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 
 // Actualizar lenguaje
-router.patch('language.update', '/:id', async(ctx) => {
+router.patch('/:id', async(req, res) => {
     try{
-        const language = await ctx.orm.Language.findByPk(ctx.params.id);
+        const language = await req.orm.Language.findByPk(req.params.id);
 
         if(language){
-            await language.update(ctx.request.body);
-            ctx.body = language;
-            ctx.status = 200;
+            await language.update(req.body);
+            res.status(200).json(language);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Language not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Language not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        res.status(400).json({error: error.message});
     }
 });
 
 // Eliminar lenguaje
-router.delete('language.delete', '/:id', async(ctx) => {
+router.delete('/:id', async(req, res) => {
     try{
-        const language = await ctx.orm.Language.findByPk(ctx.params.id);
+        const language = await req.orm.Language.findByPk(req.params.id);
 
         if(language){
             await language.destroy();
-            ctx.body = language;
-            ctx.status = 200;
+            res.status(204).json(language);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Language not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Language not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({error: error.message});
     }
 });
 

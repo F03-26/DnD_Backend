@@ -1,15 +1,15 @@
-const Router = require("koa-router");
-const router = new Router();
+const express = require('express');
+const router = express.Router();
 const { Op } = require('sequelize');
 
-router.get('classescoins.coins', '/:id', async(ctx) => {
+router.get('/:id', async(req, res) => {
     try{
-        const coins = await ctx.orm.ClassesCoins.findAll({
+        const coins = await req.orm.ClassesCoins.findAll({
             where: {
-                class_id: ctx.params.id
+                class_id: req.params.id
             },
             include: {
-                model: ctx.orm.Coin,
+                model: req.orm.Coin,
             }
         })
 
@@ -28,23 +28,15 @@ router.get('classescoins.coins', '/:id', async(ctx) => {
                 response.push(coin);
             }
 
-            ctx.body = response;
-            ctx.status = 200;
+            res.status(200).json(response);
         }
         else{
-            ctx.throw(404);
+            res.status(404).json({ error: 'Coins not found' });
         }
     }
     catch(error){
-        if(error.message == 'Not Found'){
-            ctx.body = { error: 'Coins not found'}
-            ctx.status = 404;
-        }
-        else{
-            console.log(error.message);
-            ctx.body = {error: error.message};
-            ctx.status = 400;
-        }
+        console.log(error.message);
+        res.status(400).json({ error: 'An error occurred while fetching coins' });
     }
 });
 
