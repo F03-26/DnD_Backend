@@ -42,7 +42,7 @@ router.get('/:id', async(req, res) => {
                 model: req.orm.Gear,
                 as: 'bundle',
                 through: {
-                    attributes: ['amount'] // Include amount from GearBundle
+                    attributes: ['amount']
                 }
             }]
         });
@@ -52,6 +52,29 @@ router.get('/:id', async(req, res) => {
         }
         else{
             res.status(404).json({ error: 'Gear not found' });
+        }
+    }
+    catch(error){
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
+    }
+});
+
+router.get('/search', async(req, res) => {
+    try{
+        const gears = await req.orm.Gear.findAll({
+            where: {
+                name: {
+                    [Op.iLike]: `%${req.body.name}%`
+                }
+            }
+        });
+        
+        if(gears.length > 0){
+            res.status(200).json(gears);
+        }
+        else{
+            res.status(404).json({ error: 'Gears not found' });
         }
     }
     catch(error){
