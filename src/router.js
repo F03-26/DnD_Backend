@@ -53,7 +53,7 @@ router.use('/tools', tool);
 router.use('/abilities', ability);
 router.use('/armor', armor);
 router.use('/weapons', weapon);
-router.use('/gear', gear);
+router.use('/gears', gear);
 router.use('/coins', coin);
 router.use('/feats', feat);
 router.use('/races', race);
