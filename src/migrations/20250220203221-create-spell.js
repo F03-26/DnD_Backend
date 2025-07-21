@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       components: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       duration: {
         type: Sequelize.STRING

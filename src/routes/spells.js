@@ -5,7 +5,9 @@ const { Op } = require('sequelize');
 //Ver todos los conjuros
 router.get('/', async (req, res) => {
     try {
-        const spells = await req.orm.Spell.findAll();
+        const spells = await req.orm.Spell.findAll({
+            order: [['id', 'ASC']]
+        });
         if (spells.length > 0) {
             res.status(200).json(spells);
         } else {
