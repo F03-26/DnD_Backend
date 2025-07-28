@@ -2,36 +2,26 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Spells', {
+    await queryInterface.createTable('ClassesSpells', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        type: Sequelize.STRING
-      },
-      level: {
+      spell_id: {
+        references: {
+          model: 'Spells',
+          key: 'id'
+        },
         type: Sequelize.INTEGER
       },
-      school: {
-        type: Sequelize.STRING
-      },
-      casting_time: {
-        type: Sequelize.STRING
-      },
-      range: {
-        type: Sequelize.STRING
-      },
-      components: {
-        type: Sequelize.TEXT
-      },
-      duration: {
-        type: Sequelize.STRING
-      },
-      description: {
-        type: Sequelize.TEXT
+      class_id: {
+        references: {
+          model: 'Classes',
+          key: 'id'
+        },
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -44,6 +34,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Spells');
+    await queryInterface.dropTable('ClassesSpells');
   }
 };
