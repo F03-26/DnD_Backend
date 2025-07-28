@@ -36,6 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsToMany(models.Weapons, {through: models.ClassesWeapons, foreignKey: 'class_id', otherKey: 'weapon_id'});
       this.belongsToMany(models.Gear, {through: models.ClassesGear, foreignKey: 'class_id', otherKey: 'gear_id'});
       this.belongsToMany(models.Coin, {through: models.ClassesCoins, foreignKey: 'class_id', otherKey: 'coin_id'});
+      this.belongsToMany(models.Spell, {through: models.ClassesSpells, foreignKey: 'class_id', otherKey: 'spell_id'});
     }
   }
   Class.init({

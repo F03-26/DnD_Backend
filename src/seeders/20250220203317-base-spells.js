@@ -4,8 +4,8 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('Spells', [
-      {
-      id: 554,
+     {
+      id: 1,
       name: 'Acid Splash',
       level: 0,
       school: 'Conjuration',
@@ -18,7 +18,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 1,
+      id: 2,
       name: 'Blade Ward',
       level: 0,
       school: 'Abjuration',
@@ -31,7 +31,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 2,
+      id: 3,
       name: 'Booming Blade',
       level: 0,
       school: 'Evocation',
@@ -44,7 +44,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 3,
+      id: 4,
       name: 'Chill Touch',
       level: 0,
       school: 'Necromancy',
@@ -57,7 +57,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 4,
+      id: 5,
       name: 'Control Flames',
       level: 0,
       school: 'Transmutation',
@@ -70,7 +70,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 5,
+      id: 6,
       name: 'Create Bonfire',
       level: 0,
       school: 'Conjuration',
@@ -83,7 +83,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 6,
+      id: 7,
       name: 'Dancing Lights',
       level: 0,
       school: 'Evocation',
@@ -96,7 +96,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 7,
+      id: 8,
       name: 'Decompose (HB)',
       level: 0,
       school: 'Necromancy',
@@ -109,7 +109,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 8,
+      id: 9,
       name: 'Druidcraft',
       level: 0,
       school: 'Transmutation',
@@ -122,7 +122,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 9,
+      id: 10,
       name: 'Eldritch Blast',
       level: 0,
       school: 'Evocation',
@@ -135,7 +135,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 10,
+      id: 11,
       name: 'Encode Thoughts',
       level: 0,
       school: 'Enchantment',
@@ -148,7 +148,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 11,
+      id: 12,
       name: 'Fire Bolt',
       level: 0,
       school: 'Evocation',
@@ -161,7 +161,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 12,
+      id: 13,
       name: 'Friends',
       level: 0,
       school: 'Enchantment',
@@ -174,7 +174,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 13,
+      id: 14,
       name: 'Frostbite',
       level: 0,
       school: 'Evocation',
@@ -187,7 +187,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 14,
+      id: 15,
       name: 'Green-Flame Blade',
       level: 0,
       school: 'Evocation',
@@ -200,7 +200,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 15,
+      id: 16,
       name: 'Guidance',
       level: 0,
       school: 'Divination',
@@ -213,7 +213,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 16,
+      id: 17,
       name: 'Gust',
       level: 0,
       school: 'Transmutation',
@@ -226,7 +226,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 17,
+      id: 18,
       name: 'Hand of Radiance (UA)',
       level: 0,
       school: 'Evocation',
@@ -239,7 +239,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 18,
+      id: 19,
       name: 'Infestation',
       level: 0,
       school: 'Conjuration',
@@ -252,7 +252,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 19,
+      id: 20,
       name: 'Light',
       level: 0,
       school: 'Evocation',
@@ -265,7 +265,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 20,
+      id: 21,
       name: 'Lightning Lure',
       level: 0,
       school: 'Evocation',
@@ -278,7 +278,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 21,
+      id: 22,
       name: 'Mage Hand',
       level: 0,
       school: 'Conjuration',
@@ -291,7 +291,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 22,
+      id: 23,
       name: 'Magic Stone',
       level: 0,
       school: 'Transmutation',
@@ -304,7 +304,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 23,
+      id: 24,
       name: 'Mending',
       level: 0,
       school: 'Transmutation',
@@ -317,7 +317,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 24,
+      id: 25,
       name: 'Message',
       level: 0,
       school: 'Transmutation',
@@ -330,7 +330,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 25,
+      id: 26,
       name: 'Mind Sliver',
       level: 0,
       school: 'Enchantment',
@@ -343,7 +343,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 26,
+      id: 27,
       name: 'Minor Illusion',
       level: 0,
       school: 'Illusion',
@@ -356,7 +356,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 27,
+      id: 28,
       name: 'Mold Earth',
       level: 0,
       school: 'Transmutation',
@@ -369,7 +369,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 28,
+      id: 29,
       name: 'On/Off (UA)',
       level: 0,
       school: 'Transmutation',
@@ -382,7 +382,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 29,
+      id: 30,
       name: 'Poison Spray',
       level: 0,
       school: 'Conjuration',
@@ -395,7 +395,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 30,
+      id: 31,
       name: 'Prestidigitation',
       level: 0,
       school: 'Transmutation',
@@ -408,7 +408,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 31,
+      id: 32,
       name: 'Primal Savagery',
       level: 0,
       school: 'Transmutation',
@@ -421,7 +421,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 32,
+      id: 33,
       name: 'Produce Flame',
       level: 0,
       school: 'Conjuration',
@@ -434,7 +434,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 33,
+      id: 34,
       name: 'Ray of Frost',
       level: 0,
       school: 'Evocation',
@@ -447,7 +447,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 34,
+      id: 35,
       name: 'Resistance',
       level: 0,
       school: 'Abjuration',
@@ -460,7 +460,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 35,
+      id: 36,
       name: 'Sacred Flame',
       level: 0,
       school: 'Evocation',
@@ -473,7 +473,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 36,
+      id: 37,
       name: 'Sapping Sting',
       level: 0,
       school: 'Necromancy',
@@ -486,7 +486,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 37,
+      id: 38,
       name: 'Shape Water',
       level: 0,
       school: 'Transmutation',
@@ -499,7 +499,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 38,
+      id: 39,
       name: 'Shillelagh',
       level: 0,
       school: 'Transmutation',
@@ -512,7 +512,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 39,
+      id: 40,
       name: 'Shocking Grasp',
       level: 0,
       school: 'Evocation',
@@ -525,7 +525,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 40,
+      id: 41,
       name: 'Spare the Dying',
       level: 0,
       school: 'Necromancy',
@@ -538,7 +538,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 41,
+      id: 42,
       name: 'Sword Burst',
       level: 0,
       school: 'Conjuration',
@@ -551,7 +551,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 42,
+      id: 43,
       name: 'Thaumaturgy',
       level: 0,
       school: 'Transmutation',
@@ -564,7 +564,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 43,
+      id: 44,
       name: 'Thorn Whip',
       level: 0,
       school: 'Transmutation',
@@ -577,7 +577,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 44,
+      id: 45,
       name: 'Thunderclap',
       level: 0,
       school: 'Evocation',
@@ -590,7 +590,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 45,
+      id: 46,
       name: 'Toll the Dead',
       level: 0,
       school: 'Necromancy',
@@ -603,7 +603,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 46,
+      id: 47,
       name: 'True Strike',
       level: 0,
       school: 'Divination',
@@ -616,7 +616,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 47,
+      id: 48,
       name: 'Vicious Mockery',
       level: 0,
       school: 'Enchantment',
@@ -629,7 +629,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 48,
+      id: 49,
       name: 'Virtue (UA)',
       level: 0,
       school: 'Abjuration',
@@ -642,7 +642,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 49,
+      id: 50,
       name: 'Word of Radiance',
       level: 0,
       school: 'Evocation',
@@ -655,7 +655,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 50,
+      id: 51,
       name: 'Absorb Elements',
       level: 1,
       school: 'Abjuration',
@@ -668,7 +668,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 51,
+      id: 52,
       name: 'Acid Stream (UA)',
       level: 1,
       school: 'Evocation',
@@ -681,7 +681,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 52,
+      id: 53,
       name: 'Alarm',
       level: 1,
       school: 'Abjuration',
@@ -694,7 +694,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 53,
+      id: 54,
       name: 'Animal Friendship',
       level: 1,
       school: 'Enchantment',
@@ -707,7 +707,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 54,
+      id: 55,
       name: 'Arcane Weapon (UA)',
       level: 1,
       school: 'Transmutation',
@@ -720,7 +720,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 55,
+      id: 56,
       name: 'Armor of Agathys',
       level: 1,
       school: 'Abjuration',
@@ -733,7 +733,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 56,
+      id: 57,
       name: 'Arms of Hadar',
       level: 1,
       school: 'Conjuration',
@@ -746,7 +746,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 57,
+      id: 58,
       name: 'Bane',
       level: 1,
       school: 'Enchantment',
@@ -759,7 +759,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 58,
+      id: 59,
       name: 'Beast Bond',
       level: 1,
       school: 'Divination',
@@ -772,7 +772,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 59,
+      id: 60,
       name: 'Bless',
       level: 1,
       school: 'Enchantment',
@@ -785,7 +785,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 60,
+      id: 61,
       name: 'Burning Hands',
       level: 1,
       school: 'Evocation',
@@ -798,7 +798,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 61,
+      id: 62,
       name: 'Catapult',
       level: 1,
       school: 'Transmutation',
@@ -811,7 +811,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 62,
+      id: 63,
       name: 'Cause Fear',
       level: 1,
       school: 'Necromancy',
@@ -824,7 +824,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 63,
+      id: 64,
       name: 'Ceremony',
       level: 1,
       school: 'Evocation',
@@ -837,7 +837,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 64,
+      id: 65,
       name: 'Chaos Bolt',
       level: 1,
       school: 'Evocation',
@@ -850,7 +850,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 65,
+      id: 66,
       name: 'Charm Person',
       level: 1,
       school: 'Enchantment',
@@ -863,7 +863,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 66,
+      id: 67,
       name: 'Chromatic Orb',
       level: 1,
       school: 'Evocation',
@@ -876,7 +876,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 67,
+      id: 68,
       name: 'Color Spray',
       level: 1,
       school: 'Illusion',
@@ -889,7 +889,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 68,
+      id: 69,
       name: 'Command',
       level: 1,
       school: 'Enchantment',
@@ -902,7 +902,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 69,
+      id: 70,
       name: 'Compelled Duel',
       level: 1,
       school: 'Enchantment',
@@ -915,7 +915,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 70,
+      id: 71,
       name: 'Comprehend Languages',
       level: 1,
       school: 'Divination',
@@ -928,7 +928,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 71,
+      id: 72,
       name: 'Create or Destroy Water',
       level: 1,
       school: 'Transmutation',
@@ -941,7 +941,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 72,
+      id: 73,
       name: 'Cure Wounds',
       level: 1,
       school: 'Evocation',
@@ -954,7 +954,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 73,
+      id: 74,
       name: 'Detect Evil and Good',
       level: 1,
       school: 'Divination',
@@ -967,7 +967,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 74,
+      id: 75,
       name: 'Detect Magic',
       level: 1,
       school: 'Divination',
@@ -980,7 +980,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 75,
+      id: 76,
       name: 'Detect Poison and Disease',
       level: 1,
       school: 'Divination',
@@ -993,7 +993,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 76,
+      id: 77,
       name: 'Disguise Self',
       level: 1,
       school: 'Illusion',
@@ -1006,7 +1006,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 77,
+      id: 78,
       name: 'Dissonant Whispers',
       level: 1,
       school: 'Enchantment',
@@ -1019,7 +1019,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 78,
+      id: 79,
       name: 'Distort Value',
       level: 1,
       school: 'Illusion',
@@ -1032,7 +1032,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 79,
+      id: 80,
       name: 'Divine Favor',
       level: 1,
       school: 'Evocation',
@@ -1045,7 +1045,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 80,
+      id: 81,
       name: 'Earth Tremor',
       level: 1,
       school: 'Evocation',
@@ -1058,7 +1058,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 81,
+      id: 82,
       name: 'Ensnaring Strike',
       level: 1,
       school: 'Conjuration',
@@ -1071,7 +1071,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 82,
+      id: 83,
       name: 'Entangle',
       level: 1,
       school: 'Conjuration',
@@ -1084,7 +1084,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 83,
+      id: 84,
       name: 'Expeditious Retreat',
       level: 1,
       school: 'Transmutation',
@@ -1097,7 +1097,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 84,
+      id: 85,
       name: 'Faerie Fire',
       level: 1,
       school: 'Evocation',
@@ -1110,7 +1110,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 85,
+      id: 86,
       name: 'False Life',
       level: 1,
       school: 'Necromancy',
@@ -1123,7 +1123,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 86,
+      id: 87,
       name: 'Feather Fall',
       level: 1,
       school: 'Transmutation',
@@ -1136,7 +1136,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 87,
+      id: 88,
       name: 'Find Familiar',
       level: 1,
       school: 'Conjuration',
@@ -1149,7 +1149,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 88,
+      id: 89,
       name: 'Fog Cloud',
       level: 1,
       school: 'Conjuration',
@@ -1162,7 +1162,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 89,
+      id: 90,
       name: 'Frost Fingers',
       level: 1,
       school: 'Evocation',
@@ -1175,7 +1175,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 90,
+      id: 91,
       name: 'Gift of Alacrity',
       level: 1,
       school: 'Divination',
@@ -1188,7 +1188,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 91,
+      id: 92,
       name: 'Goodberry',
       level: 1,
       school: 'Transmutation',
@@ -1201,7 +1201,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 92,
+      id: 93,
       name: 'Grease',
       level: 1,
       school: 'Conjuration',
@@ -1214,7 +1214,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 93,
+      id: 94,
       name: 'Guiding Bolt',
       level: 1,
       school: 'Evocation',
@@ -1227,7 +1227,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 94,
+      id: 95,
       name: 'Guiding Hand (UA)',
       level: 1,
       school: 'Divination',
@@ -1240,7 +1240,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 95,
+      id: 96,
       name: 'Hail of Thorns',
       level: 1,
       school: 'Conjuration',
@@ -1253,7 +1253,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 96,
+      id: 97,
       name: 'Healing Elixir (UA)',
       level: 1,
       school: 'Conjuration',
@@ -1266,7 +1266,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 97,
+      id: 98,
       name: 'Healing Word',
       level: 1,
       school: 'Evocation',
@@ -1279,7 +1279,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 98,
+      id: 99,
       name: 'Hellish Rebuke',
       level: 1,
       school: 'Evocation',
@@ -1292,7 +1292,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 99,
+      id: 100,
       name: 'Heroism',
       level: 1,
       school: 'Enchantment',
@@ -1305,7 +1305,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 100,
+      id: 101,
       name: 'Hex',
       level: 1,
       school: 'Enchantment',
@@ -1318,7 +1318,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 101,
+      id: 102,
       name: 'Hunter\'s Mark',
       level: 1,
       school: 'Divination',
@@ -1331,7 +1331,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 102,
+      id: 103,
       name: 'Ice Knife',
       level: 1,
       school: 'Conjuration',
@@ -1344,7 +1344,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 103,
+      id: 104,
       name: 'Id Insinuation (UA)',
       level: 1,
       school: 'Enchantment',
@@ -1357,7 +1357,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 104,
+      id: 105,
       name: 'Identify',
       level: 1,
       school: 'Divination',
@@ -1370,7 +1370,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 105,
+      id: 106,
       name: 'Illusory Script',
       level: 1,
       school: 'Illusion',
@@ -1383,7 +1383,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 106,
+      id: 107,
       name: 'Infallible Relay (UA)',
       level: 1,
       school: 'Divination',
@@ -1396,7 +1396,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 107,
+      id: 108,
       name: 'Inflict Wounds',
       level: 1,
       school: 'Necromancy',
@@ -1409,7 +1409,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 108,
+      id: 109,
       name: 'Jim\'s Magic Missile',
       level: 1,
       school: 'Evocation',
@@ -1422,7 +1422,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 109,
+      id: 110,
       name: 'Jump',
       level: 1,
       school: 'Transmutation',
@@ -1435,7 +1435,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 110,
+      id: 111,
       name: 'Longstrider',
       level: 1,
       school: 'Transmutation',
@@ -1448,7 +1448,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 111,
+      id: 112,
       name: 'Mage Armor',
       level: 1,
       school: 'Abjuration',
@@ -1461,7 +1461,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 112,
+      id: 113,
       name: 'Magic Missile',
       level: 1,
       school: 'Evocation',
@@ -1474,7 +1474,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 113,
+      id: 114,
       name: 'Magnify Gravity',
       level: 1,
       school: 'Transmutation',
@@ -1487,7 +1487,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 114,
+      id: 115,
       name: 'Protection from Evil and Good',
       level: 1,
       school: 'Abjuration',
@@ -1500,7 +1500,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 115,
+      id: 116,
       name: 'Puppet (UA)',
       level: 1,
       school: 'Enchantment',
@@ -1513,7 +1513,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 116,
+      id: 117,
       name: 'Purify Food and Drink',
       level: 1,
       school: 'Transmutation',
@@ -1526,7 +1526,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 117,
+      id: 118,
       name: 'Ray of Sickness',
       level: 1,
       school: 'Necromancy',
@@ -1539,7 +1539,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 118,
+      id: 119,
       name: 'Remote Access (UA)',
       level: 1,
       school: 'Transmutation',
@@ -1552,7 +1552,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 119,
+      id: 120,
       name: 'Sanctuary',
       level: 1,
       school: 'Abjuration',
@@ -1565,7 +1565,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 120,
+      id: 121,
       name: 'Searing Smite',
       level: 1,
       school: 'Evocation',
@@ -1578,7 +1578,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 121,
+      id: 122,
       name: 'Sense Emotion (UA)',
       level: 1,
       school: 'Divination',
@@ -1591,7 +1591,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 122,
+      id: 123,
       name: 'Shield',
       level: 1,
       school: 'Abjuration',
@@ -1604,7 +1604,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 123,
+      id: 124,
       name: 'Shield of Faith',
       level: 1,
       school: 'Abjuration',
@@ -1617,7 +1617,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 124,
+      id: 125,
       name: 'Silent Image',
       level: 1,
       school: 'Illusion',
@@ -1630,7 +1630,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 125,
+      id: 126,
       name: 'Sleep',
       level: 1,
       school: 'Enchantment',
@@ -1643,7 +1643,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 126,
+      id: 127,
       name: 'Snare',
       level: 1,
       school: 'Abjuration',
@@ -1656,7 +1656,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 127,
+      id: 128,
       name: 'Speak with Animals',
       level: 1,
       school: 'Divination',
@@ -1669,7 +1669,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 128,
+      id: 129,
       name: 'Sudden Awakening (UA)',
       level: 1,
       school: 'Enchantment',
@@ -1682,7 +1682,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 129,
+      id: 130,
       name: 'Tasha\'s Caustic Brew',
       level: 1,
       school: 'Evocation',
@@ -1695,7 +1695,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 130,
+      id: 131,
       name: 'Tasha\'s Hideous Laughter',
       level: 1,
       school: 'Enchantment',
@@ -1708,7 +1708,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 131,
+      id: 132,
       name: 'Tenser\'s Floating Disk',
       level: 1,
       school: 'Conjuration',
@@ -1721,7 +1721,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 132,
+      id: 133,
       name: 'Thunderous Smite',
       level: 1,
       school: 'Evocation',
@@ -1734,7 +1734,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 133,
+      id: 134,
       name: 'Thunderwave',
       level: 1,
       school: 'Evocation',
@@ -1747,7 +1747,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 134,
+      id: 135,
       name: 'Unearthly Chorus (UA)',
       level: 1,
       school: 'Illusion',
@@ -1760,7 +1760,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 135,
+      id: 136,
       name: 'Unseen Servant',
       level: 1,
       school: 'Conjuration',
@@ -1773,7 +1773,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 136,
+      id: 137,
       name: 'Wild Cunning (UA)',
       level: 1,
       school: 'Transmutation',
@@ -1786,7 +1786,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 137,
+      id: 138,
       name: 'Witch Bolt',
       level: 1,
       school: 'Evocation',
@@ -1799,7 +1799,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 138,
+      id: 139,
       name: 'Wrathful Smite',
       level: 1,
       school: 'Evocation',
@@ -1812,7 +1812,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 139,
+      id: 140,
       name: 'Zephyr Strike',
       level: 1,
       school: 'Transmutation',
@@ -1825,7 +1825,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 140,
+      id: 141,
       name: 'Aganazzar\'s Scorcher',
       level: 2,
       school: 'Evocation',
@@ -1838,7 +1838,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 141,
+      id: 142,
       name: 'Aid',
       level: 2,
       school: 'Abjuration',
@@ -1851,7 +1851,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 142,
+      id: 143,
       name: 'Alter Self',
       level: 2,
       school: 'Transmutation',
@@ -1864,7 +1864,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 143,
+      id: 144,
       name: 'Animal Messenger',
       level: 2,
       school: 'Enchantment',
@@ -1877,7 +1877,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 144,
+      id: 145,
       name: 'Arcane Hacking (UA)',
       level: 2,
       school: 'Transmutation',
@@ -1890,7 +1890,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 145,
+      id: 146,
       name: 'Arcane Lock',
       level: 2,
       school: 'Abjuration',
@@ -1903,7 +1903,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 146,
+      id: 147,
       name: 'Augury',
       level: 2,
       school: 'Divination',
@@ -1916,7 +1916,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 147,
+      id: 148,
       name: 'Barkskin',
       level: 2,
       school: 'Transmutation',
@@ -1929,7 +1929,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 148,
+      id: 149,
       name: 'Beast Sense',
       level: 2,
       school: 'Divination',
@@ -1942,7 +1942,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 149,
+      id: 150,
       name: 'Blindness/Deafness',
       level: 2,
       school: 'Necromancy',
@@ -1955,7 +1955,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 150,
+      id: 151,
       name: 'Blur',
       level: 2,
       school: 'Illusion',
@@ -1968,7 +1968,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 151,
+      id: 152,
       name: 'Branding Smite',
       level: 2,
       school: 'Evocation',
@@ -1981,7 +1981,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 152,
+      id: 153,
       name: 'Calm Emotions',
       level: 2,
       school: 'Enchantment',
@@ -1994,7 +1994,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 153,
+      id: 154,
       name: 'Cloud of Daggers',
       level: 2,
       school: 'Conjuration',
@@ -2007,7 +2007,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 154,
+      id: 155,
       name: 'Continual Flame',
       level: 2,
       school: 'Evocation',
@@ -2020,7 +2020,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 155,
+      id: 156,
       name: 'Cordon of Arrows',
       level: 2,
       school: 'Transmutation',
@@ -2033,7 +2033,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 156,
+      id: 157,
       name: 'Crown of Madness',
       level: 2,
       school: 'Enchantment',
@@ -2046,7 +2046,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 157,
+      id: 158,
       name: 'Darkness',
       level: 2,
       school: 'Evocation',
@@ -2059,7 +2059,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 158,
+      id: 159,
       name: 'Darkvision',
       level: 2,
       school: 'Transmutation',
@@ -2072,7 +2072,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 159,
+      id: 160,
       name: 'Detect Thoughts',
       level: 2,
       school: 'Divination',
@@ -2085,7 +2085,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 160,
+      id: 161,
       name: 'Digital Phantom (UA)',
       level: 2,
       school: 'Abjuration',
@@ -2098,7 +2098,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 161,
+      id: 162,
       name: 'Dragon\'s Breath',
       level: 2,
       school: 'Transmutation',
@@ -2111,7 +2111,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 162,
+      id: 163,
       name: 'Dust Devil',
       level: 2,
       school: 'Conjuration',
@@ -2124,7 +2124,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 163,
+      id: 164,
       name: 'Earthbind',
       level: 2,
       school: 'Transmutation',
@@ -2137,7 +2137,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 164,
+      id: 165,
       name: 'Enhance Ability',
       level: 2,
       school: 'Transmutation',
@@ -2150,7 +2150,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 165,
+      id: 166,
       name: 'Enlarge/Reduce',
       level: 2,
       school: 'Transmutation',
@@ -2163,7 +2163,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 166,
+      id: 167,
       name: 'Enthrall',
       level: 2,
       school: 'Enchantment',
@@ -2176,7 +2176,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 167,
+      id: 168,
       name: 'Find Steed',
       level: 2,
       school: 'Conjuration',
@@ -2189,7 +2189,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 168,
+      id: 169,
       name: 'Find Traps',
       level: 2,
       school: 'Divination',
@@ -2202,7 +2202,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 169,
+      id: 170,
       name: 'Find Vehicle (UA)',
       level: 2,
       school: 'Conjuration',
@@ -2215,7 +2215,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 170,
+      id: 171,
       name: 'Flame Blade',
       level: 2,
       school: 'Evocation',
@@ -2228,7 +2228,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 171,
+      id: 172,
       name: 'Flaming Sphere',
       level: 2,
       school: 'Conjuration',
@@ -2241,7 +2241,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 172,
+      id: 173,
       name: 'Flock of Familiars',
       level: 2,
       school: 'Conjuration',
@@ -2254,7 +2254,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 173,
+      id: 174,
       name: 'Fortune\'s Favor',
       level: 2,
       school: 'Divination',
@@ -2267,7 +2267,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 174,
+      id: 175,
       name: 'Gentle Repose',
       level: 2,
       school: 'Necromancy',
@@ -2280,7 +2280,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 175,
+      id: 176,
       name: 'Gift of Gab',
       level: 2,
       school: 'Enchantment',
@@ -2293,7 +2293,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 176,
+      id: 177,
       name: 'Gust of Wind',
       level: 2,
       school: 'Evocation',
@@ -2306,7 +2306,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 177,
+      id: 178,
       name: 'Healing Spirit',
       level: 2,
       school: 'Conjuration',
@@ -2319,7 +2319,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 178,
+      id: 179,
       name: 'Heat Metal',
       level: 2,
       school: 'Transmutation',
@@ -2332,7 +2332,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 179,
+      id: 180,
       name: 'Hold Person',
       level: 2,
       school: 'Enchantment',
@@ -2345,7 +2345,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 180,
+      id: 181,
       name: 'Icingdeath\'s Frost (UA)',
       level: 2,
       school: 'Evocation',
@@ -2358,7 +2358,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 181,
+      id: 182,
       name: 'Immovable Object',
       level: 2,
       school: 'Transmutation',
@@ -2371,7 +2371,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 182,
+      id: 183,
       name: 'Invisibility',
       level: 2,
       school: 'Transmutation',
@@ -2384,7 +2384,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 183,
+      id: 184,
       name: 'Jim\'s Glowing Coin',
       level: 2,
       school: 'Enchantment',
@@ -2397,7 +2397,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 184,
+      id: 185,
       name: 'Knock',
       level: 2,
       school: 'Transmutation',
@@ -2410,7 +2410,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 185,
+      id: 186,
       name: 'Lesser Restoration',
       level: 2,
       school: 'Abjuration',
@@ -2423,7 +2423,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 186,
+      id: 187,
       name: 'Levitate',
       level: 2,
       school: 'Transmutation',
@@ -2436,7 +2436,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 187,
+      id: 188,
       name: 'Locate Animals or Plants',
       level: 2,
       school: 'Divination',
@@ -2449,7 +2449,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 188,
+      id: 189,
       name: 'Locate Object',
       level: 2,
       school: 'Divination',
@@ -2462,7 +2462,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 189,
+      id: 190,
       name: 'Magic Mouth',
       level: 2,
       school: 'Illusion',
@@ -2475,7 +2475,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 190,
+      id: 191,
       name: 'Magic Weapon',
       level: 2,
       school: 'Transmutation',
@@ -2488,7 +2488,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 191,
+      id: 192,
       name: 'Maximillian\'s Earthen Grasp',
       level: 2,
       school: 'Transmutation',
@@ -2501,7 +2501,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 192,
+      id: 193,
       name: 'Melf\'s Acid Arrow',
       level: 2,
       school: 'Evocation',
@@ -2514,7 +2514,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 193,
+      id: 194,
       name: 'Mental Barrier (UA)',
       level: 2,
       school: 'Abjuration',
@@ -2527,7 +2527,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 194,
+      id: 195,
       name: 'Mind Spike',
       level: 2,
       school: 'Divination',
@@ -2540,7 +2540,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 195,
+      id: 196,
       name: 'Mind Thrust (UA)',
       level: 2,
       school: 'Enchantment',
@@ -2553,7 +2553,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 196,
+      id: 197,
       name: 'Mirror Image',
       level: 2,
       school: 'Illusion',
@@ -2566,7 +2566,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 197,
+      id: 198,
       name: 'Misty Step',
       level: 2,
       school: 'Conjuration',
@@ -2579,7 +2579,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 198,
+      id: 199,
       name: 'Moonbeam',
       level: 2,
       school: 'Evocation',
@@ -2592,7 +2592,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 199,
+      id: 200,
       name: 'Nathair\'s Mischief (UA)',
       level: 2,
       school: 'Illusion',
@@ -2605,7 +2605,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 200,
+      id: 201,
       name: 'Nystul\'s Magic Aura',
       level: 2,
       school: 'Illusion',
@@ -2618,7 +2618,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 201,
+      id: 202,
       name: 'Pass Without Trace',
       level: 2,
       school: 'Abjuration',
@@ -2631,7 +2631,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 202,
+      id: 203,
       name: 'Phantasmal Force',
       level: 2,
       school: 'Illusion',
@@ -2644,7 +2644,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 203,
+      id: 204,
       name: 'Prayer of Healing',
       level: 2,
       school: 'Evocation',
@@ -2657,7 +2657,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 204,
+      id: 205,
       name: 'Protection from Poison',
       level: 2,
       school: 'Abjuration',
@@ -2670,7 +2670,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 205,
+      id: 206,
       name: 'Pyrotechnics',
       level: 2,
       school: 'Transmutation',
@@ -2683,7 +2683,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 206,
+      id: 207,
       name: 'Ray of Enfeeblement',
       level: 2,
       school: 'Necromancy',
@@ -2696,7 +2696,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 207,
+      id: 208,
       name: 'Rope Trick',
       level: 2,
       school: 'Transmutation',
@@ -2709,7 +2709,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 208,
+      id: 209,
       name: 'Scorching Ray',
       level: 2,
       school: 'Evocation',
@@ -2722,7 +2722,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 209,
+      id: 210,
       name: 'See Invisibility',
       level: 2,
       school: 'Divination',
@@ -2735,7 +2735,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 210,
+      id: 211,
       name: 'Shadow Blade',
       level: 2,
       school: 'Illusion',
@@ -2748,7 +2748,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 211,
+      id: 212,
       name: 'Shatter',
       level: 2,
       school: 'Evocation',
@@ -2761,7 +2761,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 212,
+      id: 213,
       name: 'Silence',
       level: 2,
       school: 'Illusion',
@@ -2774,7 +2774,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 213,
+      id: 214,
       name: 'Skywrite',
       level: 2,
       school: 'Transmutation',
@@ -2787,7 +2787,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 214,
+      id: 215,
       name: 'Snilloc\'s Snowball Storm',
       level: 2,
       school: 'Evocation',
@@ -2800,7 +2800,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 215,
+      id: 216,
       name: 'Spider Climb',
       level: 2,
       school: 'Transmutation',
@@ -2813,7 +2813,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 216,
+      id: 217,
       name: 'Spike Growth',
       level: 2,
       school: 'Transmutation',
@@ -2826,7 +2826,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 217,
+      id: 218,
       name: 'Spiritual Weapon',
       level: 2,
       school: 'Evocation',
@@ -2839,7 +2839,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 218,
+      id: 219,
       name: 'Suggestion',
       level: 2,
       school: 'Enchantment',
@@ -2852,7 +2852,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 219,
+      id: 220,
       name: 'Summon Beast',
       level: 2,
       school: 'Conjuration',
@@ -2865,7 +2865,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 220,
+      id: 221,
       name: 'Tasha\'s Mind Whip',
       level: 2,
       school: 'Enchantment',
@@ -2878,7 +2878,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 221,
+      id: 222,
       name: 'Thought Shield (UA)',
       level: 2,
       school: 'Abjuration',
@@ -2891,7 +2891,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 222,
+      id: 223,
       name: 'Warding Bond',
       level: 2,
       school: 'Abjuration',
@@ -2904,7 +2904,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 223,
+      id: 224,
       name: 'Warding Wind',
       level: 2,
       school: 'Evocation',
@@ -2917,7 +2917,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 224,
+      id: 225,
       name: 'Web',
       level: 2,
       school: 'Conjuration',
@@ -2930,7 +2930,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 225,
+      id: 226,
       name: 'Wristpocket',
       level: 2,
       school: 'Conjuration',
@@ -2943,7 +2943,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 226,
+      id: 227,
       name: 'Zone of Truth',
       level: 2,
       school: 'Enchantment',
@@ -2956,7 +2956,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 227,
+      id: 228,
       name: 'Animate Dead',
       level: 3,
       school: 'Necromancy',
@@ -2969,7 +2969,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 228,
+      id: 229,
       name: 'Aura of Vitality',
       level: 3,
       school: 'Evocation',
@@ -2982,7 +2982,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 229,
+      id: 230,
       name: 'Beacon of Hope',
       level: 3,
       school: 'Abjuration',
@@ -2995,7 +2995,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 230,
+      id: 231,
       name: 'Bestow Curse',
       level: 3,
       school: 'Necromancy',
@@ -3008,7 +3008,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 231,
+      id: 232,
       name: 'Blinding Smite',
       level: 3,
       school: 'Evocation',
@@ -3021,7 +3021,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 232,
+      id: 233,
       name: 'Blink',
       level: 3,
       school: 'Transmutation',
@@ -3034,7 +3034,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 233,
+      id: 234,
       name: 'Call Lightning',
       level: 3,
       school: 'Conjuration',
@@ -3047,7 +3047,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 234,
+      id: 235,
       name: 'Catnap',
       level: 3,
       school: 'Enchantment',
@@ -3060,7 +3060,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 235,
+      id: 236,
       name: 'Clairvoyance',
       level: 3,
       school: 'Divination',
@@ -3073,7 +3073,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 236,
+      id: 237,
       name: 'Conjure Animals',
       level: 3,
       school: 'Conjuration',
@@ -3086,7 +3086,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 237,
+      id: 238,
       name: 'Conjure Barrage',
       level: 3,
       school: 'Conjuration',
@@ -3099,7 +3099,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 238,
+      id: 239,
       name: 'Conjure Lesser Demon (UA)',
       level: 3,
       school: 'Conjuration',
@@ -3112,7 +3112,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 239,
+      id: 240,
       name: 'Counterspell',
       level: 3,
       school: 'Abjuration',
@@ -3125,7 +3125,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 240,
+      id: 241,
       name: 'Create Food and Water',
       level: 3,
       school: 'Conjuration',
@@ -3138,7 +3138,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 241,
+      id: 242,
       name: 'Crusader\'s Mantle',
       level: 3,
       school: 'Evocation',
@@ -3151,7 +3151,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 242,
+      id: 243,
       name: 'Daylight',
       level: 3,
       school: 'Evocation',
@@ -3164,7 +3164,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 243,
+      id: 244,
       name: 'Dispel Magic',
       level: 3,
       school: 'Abjuration',
@@ -3177,7 +3177,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 244,
+      id: 245,
       name: 'Elemental Weapon',
       level: 3,
       school: 'Transmutation',
@@ -3190,7 +3190,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 245,
+      id: 246,
       name: 'Enemies Abound',
       level: 3,
       school: 'Enchantment',
@@ -3203,7 +3203,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 246,
+      id: 247,
       name: 'Erupting Earth',
       level: 3,
       school: 'Transmutation',
@@ -3216,7 +3216,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 247,
+      id: 248,
       name: 'Fast Friends',
       level: 3,
       school: 'Enchantment',
@@ -3229,7 +3229,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 248,
+      id: 249,
       name: 'Fear',
       level: 3,
       school: 'Illusion',
@@ -3242,7 +3242,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 249,
+      id: 250,
       name: 'Feign Death',
       level: 3,
       school: 'Necromancy',
@@ -3255,7 +3255,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 250,
+      id: 251,
       name: 'Fireball',
       level: 3,
       school: 'Evocation',
@@ -3268,7 +3268,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 251,
+      id: 252,
       name: 'Flame Arrows',
       level: 3,
       school: 'Transmutation',
@@ -3281,7 +3281,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 252,
+      id: 253,
       name: 'Flame Stride (UA)',
       level: 3,
       school: 'Transmutation',
@@ -3294,7 +3294,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 253,
+      id: 254,
       name: 'Fly',
       level: 3,
       school: 'Transmutation',
@@ -3307,7 +3307,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 254,
+      id: 255,
       name: 'Galder\'s Tower',
       level: 3,
       school: 'Conjuration',
@@ -3320,7 +3320,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 255,
+      id: 256,
       name: 'Gaseous Form',
       level: 3,
       school: 'Transmutation',
@@ -3333,7 +3333,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 256,
+      id: 257,
       name: 'Glyph of Warding',
       level: 3,
       school: 'Abjuration',
@@ -3346,7 +3346,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 257,
+      id: 258,
       name: 'Haste',
       level: 3,
       school: 'Transmutation',
@@ -3359,7 +3359,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 258,
+      id: 259,
       name: 'Haywire (UA)',
       level: 3,
       school: 'Enchantment',
@@ -3372,7 +3372,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 259,
+      id: 260,
       name: 'Hunger Of Hadar',
       level: 3,
       school: 'Conjuration',
@@ -3385,7 +3385,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 260,
+      id: 261,
       name: 'Hypnotic Pattern',
       level: 3,
       school: 'Illusion',
@@ -3398,7 +3398,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 261,
+      id: 262,
       name: 'Incite Greed',
       level: 3,
       school: 'Enchantment',
@@ -3411,7 +3411,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 262,
+      id: 263,
       name: 'Intellect Fortress',
       level: 3,
       school: 'Abjuration',
@@ -3424,7 +3424,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 263,
+      id: 264,
       name: 'Invisibility To Cameras (UA)',
       level: 3,
       school: 'Illusion',
@@ -3437,7 +3437,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 264,
+      id: 265,
       name: 'Leomund\'s Tiny Hut',
       level: 3,
       school: 'Evocation',
@@ -3450,7 +3450,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 265,
+      id: 266,
       name: 'Life Transference',
       level: 3,
       school: 'Evocation',
@@ -3463,7 +3463,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 266,
+      id: 267,
       name: 'Lightning Arrow',
       level: 3,
       school: 'Transmutation',
@@ -3476,7 +3476,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 267,
+      id: 268,
       name: 'Lightning Bolt',
       level: 3,
       school: 'Evocation',
@@ -3489,7 +3489,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 268,
+      id: 269,
       name: 'Magic Circle',
       level: 3,
       school: 'Abjuration',
@@ -3502,7 +3502,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 269,
+      id: 270,
       name: 'Major Image',
       level: 3,
       school: 'Illusion',
@@ -3515,7 +3515,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 270,
+      id: 271,
       name: 'Mass Healing Word',
       level: 3,
       school: 'Evocation',
@@ -3528,7 +3528,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 271,
+      id: 272,
       name: 'Meld into Stone',
       level: 3,
       school: 'Transmutation',
@@ -3541,7 +3541,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 272,
+      id: 273,
       name: 'Melf\'s Minute Meteors',
       level: 3,
       school: 'Evocation',
@@ -3554,7 +3554,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 273,
+      id: 274,
       name: 'Motivational Speech',
       level: 3,
       school: 'Enchantment',
@@ -3567,7 +3567,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 274,
+      id: 275,
       name: 'Nondetection',
       level: 3,
       school: 'Abjuration',
@@ -3580,7 +3580,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 275,
+      id: 276,
       name: 'Phantom Steed',
       level: 3,
       school: 'Illusion',
@@ -3593,7 +3593,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 276,
+      id: 277,
       name: 'Plant Growth',
       level: 3,
       school: 'Transmutation',
@@ -3606,7 +3606,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 277,
+      id: 278,
       name: 'Protection from Ballistics (UA)',
       level: 3,
       school: 'Abjuration',
@@ -3619,7 +3619,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 278,
+      id: 279,
       name: 'Protection from Energy',
       level: 3,
       school: 'Abjuration',
@@ -3632,7 +3632,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 279,
+      id: 280,
       name: 'Psionic Blast (UA)',
       level: 3,
       school: 'Evocation',
@@ -3645,7 +3645,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 280,
+      id: 281,
       name: 'Pulse Wave',
       level: 3,
       school: 'Evocation',
@@ -3658,7 +3658,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 281,
+      id: 282,
       name: 'Remove Curse',
       level: 3,
       school: 'Abjuration',
@@ -3671,7 +3671,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 282,
+      id: 283,
       name: 'Revivify',
       level: 3,
       school: 'Necromancy',
@@ -3684,7 +3684,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 283,
+      id: 284,
       name: 'Sending',
       level: 3,
       school: 'Evocation',
@@ -3697,7 +3697,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 284,
+      id: 285,
       name: 'Sleet Storm',
       level: 3,
       school: 'Conjuration',
@@ -3710,7 +3710,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 285,
+      id: 286,
       name: 'Slow',
       level: 3,
       school: 'Transmutation',
@@ -3723,7 +3723,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 286,
+      id: 287,
       name: 'Speak with Dead',
       level: 3,
       school: 'Necromancy',
@@ -3736,7 +3736,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 287,
+      id: 288,
       name: 'Speak with Plants',
       level: 3,
       school: 'Transmutation',
@@ -3749,7 +3749,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 288,
+      id: 289,
       name: 'Spirit Guardians',
       level: 3,
       school: 'Conjuration',
@@ -3762,7 +3762,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 289,
+      id: 290,
       name: 'Spirit Shroud',
       level: 3,
       school: 'Necromancy',
@@ -3775,7 +3775,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 290,
+      id: 291,
       name: 'Stinking Cloud',
       level: 3,
       school: 'Conjuration',
@@ -3788,7 +3788,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 291,
+      id: 292,
       name: 'Summon Fey',
       level: 3,
       school: 'Conjuration',
@@ -3801,7 +3801,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 292,
+      id: 293,
       name: 'Summon Lesser Demons',
       level: 3,
       school: 'Conjuration',
@@ -3814,7 +3814,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 293,
+      id: 294,
       name: 'Summon Shadowspawn',
       level: 3,
       school: 'Conjuration',
@@ -3827,7 +3827,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 294,
+      id: 295,
       name: 'Summon Undead',
       level: 3,
       school: 'Necromancy',
@@ -3840,7 +3840,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 295,
+      id: 296,
       name: 'Thunder Step',
       level: 3,
       school: 'Conjuration',
@@ -3853,7 +3853,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 296,
+      id: 297,
       name: 'Tidal Wave',
       level: 3,
       school: 'Conjuration',
@@ -3866,7 +3866,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 297,
+      id: 298,
       name: 'Tiny Servant',
       level: 3,
       school: 'Transmutation',
@@ -3879,7 +3879,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 298,
+      id: 299,
       name: 'Tongues',
       level: 3,
       school: 'Divination',
@@ -3892,7 +3892,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 299,
+      id: 300,
       name: 'Vampiric Touch',
       level: 3,
       school: 'Necromancy',
@@ -3905,7 +3905,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 300,
+      id: 301,
       name: 'Wall of Sand',
       level: 3,
       school: 'Evocation',
@@ -3918,7 +3918,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 301,
+      id: 302,
       name: 'Wall of Water',
       level: 3,
       school: 'Evocation',
@@ -3931,7 +3931,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 302,
+      id: 303,
       name: 'Water Breathing',
       level: 3,
       school: 'Transmutation',
@@ -3944,7 +3944,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 303,
+      id: 304,
       name: 'Water Walk',
       level: 3,
       school: 'Transmutation',
@@ -3957,7 +3957,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 304,
+      id: 305,
       name: 'Wind Wall',
       level: 3,
       school: 'Evocation',
@@ -3970,7 +3970,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 305,
+      id: 306,
       name: 'Arcane Eye',
       level: 4,
       school: 'Divination',
@@ -3983,7 +3983,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 306,
+      id: 307,
       name: 'Aura of Life',
       level: 4,
       school: 'Abjuration',
@@ -3996,7 +3996,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 307,
+      id: 308,
       name: 'Aura of Purity',
       level: 4,
       school: 'Abjuration',
@@ -4009,7 +4009,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 308,
+      id: 309,
       name: 'Banishment',
       level: 4,
       school: 'Abjuration',
@@ -4022,7 +4022,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 309,
+      id: 310,
       name: 'Blight',
       level: 4,
       school: 'Necromancy',
@@ -4035,7 +4035,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 310,
+      id: 311,
       name: 'Charm Monster',
       level: 4,
       school: 'Enchantment',
@@ -4048,7 +4048,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 311,
+      id: 312,
       name: 'Compulsion',
       level: 4,
       school: 'Enchantment',
@@ -4061,7 +4061,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 312,
+      id: 313,
       name: 'Confusion',
       level: 4,
       school: 'Enchantment',
@@ -4074,7 +4074,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 313,
+      id: 314,
       name: 'Conjure Barlgura (UA)',
       level: 4,
       school: 'Conjuration',
@@ -4087,7 +4087,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 314,
+      id: 315,
       name: 'Conjure Knowbot (UA)',
       level: 4,
       school: 'Conjuration',
@@ -4100,7 +4100,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 315,
+      id: 316,
       name: 'Conjure Minor Elementals',
       level: 4,
       school: 'Conjuration',
@@ -4113,7 +4113,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 316,
+      id: 317,
       name: 'Conjure Shadow Demon (UA)',
       level: 4,
       school: 'Conjuration',
@@ -4126,7 +4126,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 317,
+      id: 318,
       name: 'Conjure Woodland Beings',
       level: 4,
       school: 'Conjuration',
@@ -4139,7 +4139,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 318,
+      id: 319,
       name: 'Control Water',
       level: 4,
       school: 'Transmutation',
@@ -4152,7 +4152,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 319,
+      id: 320,
       name: 'Death Ward',
       level: 4,
       school: 'Abjuration',
@@ -4165,7 +4165,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 320,
+      id: 321,
       name: 'Dimension Door',
       level: 4,
       school: 'Conjuration',
@@ -4178,7 +4178,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 321,
+      id: 322,
       name: 'Divination',
       level: 4,
       school: 'Divination',
@@ -4191,7 +4191,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 322,
+      id: 323,
       name: 'Dominate Beast',
       level: 4,
       school: 'Enchantment',
@@ -4204,7 +4204,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 323,
+      id: 324,
       name: 'Ego Whip (UA)',
       level: 4,
       school: 'Enchantment',
@@ -4217,7 +4217,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 324,
+      id: 325,
       name: 'Elemental Bane',
       level: 4,
       school: 'Transmutation',
@@ -4230,7 +4230,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 325,
+      id: 326,
       name: 'Evard\'s Black Tentacles',
       level: 4,
       school: 'Conjuration',
@@ -4243,7 +4243,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 326,
+      id: 327,
       name: 'Fabricate',
       level: 4,
       school: 'Transmutation',
@@ -4256,7 +4256,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 327,
+      id: 328,
       name: 'Find Greater Steed',
       level: 4,
       school: 'Conjuration',
@@ -4269,7 +4269,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 328,
+      id: 329,
       name: 'Fire Shield',
       level: 4,
       school: 'Evocation',
@@ -4282,7 +4282,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 329,
+      id: 330,
       name: 'Freedom of Movement',
       level: 4,
       school: 'Abjuration',
@@ -4295,7 +4295,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 330,
+      id: 331,
       name: 'Galder\'s Speedy Courier',
       level: 4,
       school: 'Conjuration',
@@ -4308,7 +4308,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 331,
+      id: 332,
       name: 'Giant Insect',
       level: 4,
       school: 'Transmutation',
@@ -4321,7 +4321,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 332,
+      id: 333,
       name: 'Grasping Vine',
       level: 4,
       school: 'Conjuration',
@@ -4334,7 +4334,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 333,
+      id: 334,
       name: 'Gravity Sinkhole',
       level: 4,
       school: 'Evocation',
@@ -4347,7 +4347,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 334,
+      id: 335,
       name: 'Greater Invisibility',
       level: 4,
       school: 'Illusion',
@@ -4360,7 +4360,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 335,
+      id: 336,
       name: 'Guardian of Faith',
       level: 4,
       school: 'Conjuration',
@@ -4373,7 +4373,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 336,
+      id: 337,
       name: 'Guardian of Nature',
       level: 4,
       school: 'Transmutation',
@@ -4386,7 +4386,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 337,
+      id: 338,
       name: 'Hallucinatory Terrain',
       level: 4,
       school: 'Illusion',
@@ -4399,7 +4399,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 338,
+      id: 339,
       name: 'Ice Storm',
       level: 4,
       school: 'Evocation',
@@ -4412,7 +4412,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 339,
+      id: 340,
       name: 'Leomund\'s Secret Chest',
       level: 4,
       school: 'Conjuration',
@@ -4425,7 +4425,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 340,
+      id: 341,
       name: 'Locate Creature',
       level: 4,
       school: 'Divination',
@@ -4438,7 +4438,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 341,
+      id: 342,
       name: 'Mordenkainen\'s Faithful Hound',
       level: 4,
       school: 'Conjuration',
@@ -4451,7 +4451,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 342,
+      id: 343,
       name: 'Mordenkainen\'s Private Sanctum',
       level: 4,
       school: 'Abjuration',
@@ -4464,7 +4464,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 343,
+      id: 344,
       name: 'Otiluke\'s Resilient Sphere',
       level: 4,
       school: 'Evocation',
@@ -4477,7 +4477,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 344,
+      id: 345,
       name: 'Phantasmal Killer',
       level: 4,
       school: 'Illusion',
@@ -4490,7 +4490,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 345,
+      id: 346,
       name: 'Polymorph',
       level: 4,
       school: 'Transmutation',
@@ -4503,7 +4503,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 346,
+      id: 347,
       name: 'Raulothim\'s Psychic Lance (UA)',
       level: 4,
       school: 'Enchantment',
@@ -4516,7 +4516,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 347,
+      id: 348,
       name: 'Shadow Of Moil',
       level: 4,
       school: 'Necromancy',
@@ -4529,7 +4529,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 348,
+      id: 349,
       name: 'Sickening Radiance',
       level: 4,
       school: 'Evocation',
@@ -4542,7 +4542,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 349,
+      id: 350,
       name: 'Staggering Smite',
       level: 4,
       school: 'Evocation',
@@ -4555,7 +4555,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 350,
+      id: 351,
       name: 'Stone Shape',
       level: 4,
       school: 'Transmutation',
@@ -4568,7 +4568,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 351,
+      id: 352,
       name: 'Stoneskin',
       level: 4,
       school: 'Abjuration',
@@ -4581,7 +4581,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 352,
+      id: 353,
       name: 'Storm Sphere',
       level: 4,
       school: 'Evocation',
@@ -4594,7 +4594,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 353,
+      id: 354,
       name: 'Summon Aberration',
       level: 4,
       school: 'Conjuration',
@@ -4607,7 +4607,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 354,
+      id: 355,
       name: 'Summon Construct',
       level: 4,
       school: 'Conjuration',
@@ -4620,7 +4620,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 355,
+      id: 356,
       name: 'Summon Elemental',
       level: 4,
       school: 'Conjuration',
@@ -4633,7 +4633,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 356,
+      id: 357,
       name: 'Summon Greater Demon',
       level: 4,
       school: 'Conjuration',
@@ -4646,7 +4646,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 357,
+      id: 358,
       name: 'Synchronicity (UA)',
       level: 4,
       school: 'Enchantment',
@@ -4659,7 +4659,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 358,
+      id: 359,
       name: 'System Backdoor (UA)',
       level: 4,
       school: 'Transmutation',
@@ -4672,7 +4672,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 359,
+      id: 360,
       name: 'Vitriolic Sphere',
       level: 4,
       school: 'Evocation',
@@ -4685,7 +4685,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 360,
+      id: 361,
       name: 'Wall of Fire',
       level: 4,
       school: 'Evocation',
@@ -4698,7 +4698,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 361,
+      id: 362,
       name: 'Watery Sphere',
       level: 4,
       school: 'Conjuration',
@@ -4711,7 +4711,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 362,
+      id: 363,
       name: 'Widogast\'s Vault of Amber (HB)',
       level: 4,
       school: 'Transmutation',
@@ -4724,7 +4724,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 363,
+      id: 364,
       name: 'Widogast\'s Web of Fire (HB)',
       level: 4,
       school: 'Evocation',
@@ -4737,7 +4737,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 364,
+      id: 365,
       name: 'Animate Objects',
       level: 5,
       school: 'Transmutation',
@@ -4750,7 +4750,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 365,
+      id: 366,
       name: 'Antilife Shell',
       level: 5,
       school: 'Abjuration',
@@ -4763,7 +4763,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 366,
+      id: 367,
       name: 'Awaken',
       level: 5,
       school: 'Transmutation',
@@ -4776,7 +4776,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 367,
+      id: 368,
       name: 'Banishing Smite',
       level: 5,
       school: 'Abjuration',
@@ -4789,7 +4789,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 368,
+      id: 369,
       name: 'Bigby\'s Hand',
       level: 5,
       school: 'Evocation',
@@ -4802,7 +4802,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 369,
+      id: 370,
       name: 'Circle of Power',
       level: 5,
       school: 'Abjuration',
@@ -4815,7 +4815,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 370,
+      id: 371,
       name: 'Cloudkill',
       level: 5,
       school: 'Conjuration',
@@ -4828,7 +4828,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 371,
+      id: 372,
       name: 'Commune',
       level: 5,
       school: 'Divination',
@@ -4841,7 +4841,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 372,
+      id: 373,
       name: 'Commune with City (UA)',
       level: 5,
       school: 'Divination',
@@ -4854,7 +4854,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 373,
+      id: 374,
       name: 'Commune with Nature',
       level: 5,
       school: 'Divination',
@@ -4867,7 +4867,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 374,
+      id: 375,
       name: 'Cone of Cold',
       level: 5,
       school: 'Evocation',
@@ -4880,7 +4880,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 375,
+      id: 376,
       name: 'Conjure Elemental',
       level: 5,
       school: 'Conjuration',
@@ -4893,7 +4893,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 376,
+      id: 377,
       name: 'Conjure Volley',
       level: 5,
       school: 'Conjuration',
@@ -4906,7 +4906,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 377,
+      id: 378,
       name: 'Conjure Vrock (UA)',
       level: 5,
       school: 'Conjuration',
@@ -4919,7 +4919,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 378,
+      id: 379,
       name: 'Contact Other Plane',
       level: 5,
       school: 'Divination',
@@ -4932,7 +4932,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 379,
+      id: 380,
       name: 'Contagion',
       level: 5,
       school: 'Necromancy',
@@ -4945,7 +4945,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 380,
+      id: 381,
       name: 'Control Winds',
       level: 5,
       school: 'Transmutation',
@@ -4958,7 +4958,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 381,
+      id: 382,
       name: 'Creation',
       level: 5,
       school: 'Illusion',
@@ -4971,7 +4971,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 382,
+      id: 383,
       name: 'Danse Macabre',
       level: 5,
       school: 'Necromancy',
@@ -4984,7 +4984,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 383,
+      id: 384,
       name: 'Dawn',
       level: 5,
       school: 'Evocation',
@@ -4997,7 +4997,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 384,
+      id: 385,
       name: 'Destructive Wave',
       level: 5,
       school: 'Evocation',
@@ -5010,7 +5010,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 385,
+      id: 386,
       name: 'Dispel Evil and Good',
       level: 5,
       school: 'Abjuration',
@@ -5023,7 +5023,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 386,
+      id: 387,
       name: 'Dominate Person',
       level: 5,
       school: 'Enchantment',
@@ -5036,7 +5036,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 387,
+      id: 388,
       name: 'Dream',
       level: 5,
       school: 'Illusion',
@@ -5049,7 +5049,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 388,
+      id: 389,
       name: 'Enervation',
       level: 5,
       school: 'Necromancy',
@@ -5062,7 +5062,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 389,
+      id: 390,
       name: 'Far Step',
       level: 5,
       school: 'Conjuration',
@@ -5075,7 +5075,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 390,
+      id: 391,
       name: 'Flame Strike',
       level: 5,
       school: 'Evocation',
@@ -5088,7 +5088,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 391,
+      id: 392,
       name: 'Geas',
       level: 5,
       school: 'Enchantment',
@@ -5101,7 +5101,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 392,
+      id: 393,
       name: 'Greater Restoration',
       level: 5,
       school: 'Abjuration',
@@ -5114,7 +5114,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 393,
+      id: 394,
       name: 'Hallow',
       level: 5,
       school: 'Evocation',
@@ -5127,7 +5127,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 394,
+      id: 395,
       name: 'Hold Monster',
       level: 5,
       school: 'Enchantment',
@@ -5140,7 +5140,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 395,
+      id: 396,
       name: 'Holy Weapon',
       level: 5,
       school: 'Evocation',
@@ -5153,7 +5153,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 396,
+      id: 397,
       name: 'Immolation',
       level: 5,
       school: 'Evocation',
@@ -5166,7 +5166,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 397,
+      id: 398,
       name: 'Infernal Calling',
       level: 5,
       school: 'Conjuration',
@@ -5179,7 +5179,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 398,
+      id: 399,
       name: 'Insect Plague',
       level: 5,
       school: 'Conjuration',
@@ -5192,7 +5192,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 399,
+      id: 400,
       name: 'Legend Lore',
       level: 5,
       school: 'Divination',
@@ -5205,7 +5205,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 400,
+      id: 401,
       name: 'Maelstrom',
       level: 5,
       school: 'Evocation',
@@ -5218,7 +5218,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 401,
+      id: 402,
       name: 'Mass Cure Wounds',
       level: 5,
       school: 'Evocation',
@@ -5231,7 +5231,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 402,
+      id: 403,
       name: 'Mislead',
       level: 5,
       school: 'Illusion',
@@ -5244,7 +5244,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 403,
+      id: 404,
       name: 'Modify Memory',
       level: 5,
       school: 'Enchantment',
@@ -5257,7 +5257,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 404,
+      id: 405,
       name: 'Negative Energy Flood',
       level: 5,
       school: 'Necromancy',
@@ -5270,7 +5270,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 405,
+      id: 406,
       name: 'Passwall',
       level: 5,
       school: 'Transmutation',
@@ -5283,7 +5283,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 406,
+      id: 407,
       name: 'Planar Binding',
       level: 5,
       school: 'Abjuration',
@@ -5296,7 +5296,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 407,
+      id: 408,
       name: 'Raise Dead',
       level: 5,
       school: 'Necromancy',
@@ -5309,7 +5309,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 408,
+      id: 409,
       name: 'Rary\'s Telepathic Bond',
       level: 5,
       school: 'Divination',
@@ -5322,7 +5322,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 409,
+      id: 410,
       name: 'Reincarnate',
       level: 5,
       school: 'Transmutation',
@@ -5335,7 +5335,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 410,
+      id: 411,
       name: 'Scrying',
       level: 5,
       school: 'Divination',
@@ -5348,7 +5348,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 411,
+      id: 412,
       name: 'Seeming',
       level: 5,
       school: 'Illusion',
@@ -5361,7 +5361,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 412,
+      id: 413,
       name: 'Shutdown (UA)',
       level: 5,
       school: 'Transmutation',
@@ -5374,7 +5374,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 413,
+      id: 414,
       name: 'Skill Empowerment',
       level: 5,
       school: 'Transmutation',
@@ -5387,7 +5387,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 414,
+      id: 415,
       name: 'Steel Wind Strike',
       level: 5,
       school: 'Conjuration',
@@ -5400,7 +5400,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 415,
+      id: 416,
       name: 'Summon Celestial',
       level: 5,
       school: 'Conjuration',
@@ -5413,7 +5413,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 416,
+      id: 417,
       name: 'Summon Draconic Spirit (UA)',
       level: 5,
       school: 'Conjuration',
@@ -5426,7 +5426,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 417,
+      id: 418,
       name: 'Swift Quiver',
       level: 5,
       school: 'Transmutation',
@@ -5439,7 +5439,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 418,
+      id: 419,
       name: 'Synaptic Static',
       level: 5,
       school: 'Enchantment',
@@ -5452,7 +5452,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 419,
+      id: 420,
       name: 'Telekinesis',
       level: 5,
       school: 'Transmutation',
@@ -5465,7 +5465,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 420,
+      id: 421,
       name: 'Teleportation Circle',
       level: 5,
       school: 'Conjuration',
@@ -5478,7 +5478,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 421,
+      id: 422,
       name: 'Temporal Shunt',
       level: 5,
       school: 'Transmutation',
@@ -5491,7 +5491,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 422,
+      id: 423,
       name: 'Transmute Rock',
       level: 5,
       school: 'Transmutation',
@@ -5504,7 +5504,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 423,
+      id: 424,
       name: 'Tree Stride',
       level: 5,
       school: 'Conjuration',
@@ -5517,7 +5517,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 424,
+      id: 425,
       name: 'Wall of Force',
       level: 5,
       school: 'Evocation',
@@ -5530,7 +5530,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 425,
+      id: 426,
       name: 'Wall Of Light',
       level: 5,
       school: 'Evocation',
@@ -5543,7 +5543,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 426,
+      id: 427,
       name: 'Wall of Stone',
       level: 5,
       school: 'Evocation',
@@ -5556,7 +5556,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 427,
+      id: 428,
       name: 'Wrath Of Nature',
       level: 5,
       school: 'Evocation',
@@ -5569,7 +5569,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 428,
+      id: 429,
       name: 'Arcane Gate',
       level: 6,
       school: 'Conjuration',
@@ -5582,7 +5582,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 429,
+      id: 430,
       name: 'Blade Barrier',
       level: 6,
       school: 'Evocation',
@@ -5595,7 +5595,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 430,
+      id: 431,
       name: 'Bones of the Earth',
       level: 6,
       school: 'Transmutation',
@@ -5608,7 +5608,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 431,
+      id: 432,
       name: 'Chain Lightning',
       level: 6,
       school: 'Evocation',
@@ -5621,7 +5621,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 432,
+      id: 433,
       name: 'Circle of Death',
       level: 6,
       school: 'Necromancy',
@@ -5634,7 +5634,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 433,
+      id: 434,
       name: 'Conjure Fey',
       level: 6,
       school: 'Conjuration',
@@ -5647,7 +5647,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 434,
+      id: 435,
       name: 'Contingency',
       level: 6,
       school: 'Evocation',
@@ -5660,7 +5660,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 435,
+      id: 436,
       name: 'Create Homunculus',
       level: 6,
       school: 'Transmutation',
@@ -5673,7 +5673,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 436,
+      id: 437,
       name: 'Create Undead',
       level: 6,
       school: 'Necromancy',
@@ -5686,7 +5686,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 437,
+      id: 438,
       name: 'Disintegrate',
       level: 6,
       school: 'Transmutation',
@@ -5699,7 +5699,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 438,
+      id: 439,
       name: 'Drawmij\'s Instant Summons',
       level: 6,
       school: 'Conjuration',
@@ -5712,7 +5712,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 439,
+      id: 440,
       name: 'Druid Grove',
       level: 6,
       school: 'Abjuration',
@@ -5725,7 +5725,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 440,
+      id: 441,
       name: 'Eyebite',
       level: 6,
       school: 'Necromancy',
@@ -5738,7 +5738,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 441,
+      id: 442,
       name: 'Find the Path',
       level: 6,
       school: 'Divination',
@@ -5751,7 +5751,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 442,
+      id: 443,
       name: 'Fizban\'s Platinum Shield (UA)',
       level: 6,
       school: 'Abjuration',
@@ -5764,7 +5764,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 443,
+      id: 444,
       name: 'Flesh to Stone',
       level: 6,
       school: 'Transmutation',
@@ -5777,7 +5777,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 444,
+      id: 445,
       name: 'Forbiddance',
       level: 6,
       school: 'Abjuration',
@@ -5790,7 +5790,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 445,
+      id: 446,
       name: 'Globe of Invulnerability',
       level: 6,
       school: 'Abjuration',
@@ -5803,7 +5803,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 446,
+      id: 447,
       name: 'Gravity Fissure',
       level: 6,
       school: 'Evocation',
@@ -5816,7 +5816,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 447,
+      id: 448,
       name: 'Guards and Wards',
       level: 6,
       school: 'Abjuration',
@@ -5829,7 +5829,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 448,
+      id: 449,
       name: 'Harm',
       level: 6,
       school: 'Necromancy',
@@ -5842,7 +5842,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 449,
+      id: 450,
       name: 'Heal',
       level: 6,
       school: 'Evocation',
@@ -5855,7 +5855,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 450,
+      id: 451,
       name: 'Heroes\' Feast',
       level: 6,
       school: 'Conjuration',
@@ -5868,7 +5868,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 451,
+      id: 452,
       name: 'Investiture of Flame',
       level: 6,
       school: 'Transmutation',
@@ -5881,7 +5881,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 452,
+      id: 453,
       name: 'Investiture of Ice',
       level: 6,
       school: 'Transmutation',
@@ -5894,7 +5894,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 453,
+      id: 454,
       name: 'Investiture of Stone',
       level: 6,
       school: 'Transmutation',
@@ -5907,7 +5907,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 454,
+      id: 455,
       name: 'Investiture of Wind',
       level: 6,
       school: 'Transmutation',
@@ -5920,7 +5920,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 455,
+      id: 456,
       name: 'Magic Jar',
       level: 6,
       school: 'Necromancy',
@@ -5933,7 +5933,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 456,
+      id: 457,
       name: 'Mass Suggestion',
       level: 6,
       school: 'Enchantment',
@@ -5946,7 +5946,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 457,
+      id: 458,
       name: 'Mental Prison',
       level: 6,
       school: 'Illusion',
@@ -5959,7 +5959,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 458,
+      id: 459,
       name: 'Move Earth',
       level: 6,
       school: 'Transmutation',
@@ -5972,7 +5972,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 459,
+      id: 460,
       name: 'Otherworldly Form (UA)',
       level: 6,
       school: 'Transmutation',
@@ -5985,7 +5985,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 460,
+      id: 461,
       name: 'Otiluke\'s Freezing Sphere',
       level: 6,
       school: 'Evocation',
@@ -5998,7 +5998,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 461,
+      id: 462,
       name: 'Otto\'s Irresistible Dance',
       level: 6,
       school: 'Enchantment',
@@ -6011,7 +6011,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 462,
+      id: 463,
       name: 'Planar Ally',
       level: 6,
       school: 'Conjuration',
@@ -6024,7 +6024,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 463,
+      id: 464,
       name: 'Primordial Ward',
       level: 6,
       school: 'Abjuration',
@@ -6037,7 +6037,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 464,
+      id: 465,
       name: 'Programmed Illusion',
       level: 6,
       school: 'Illusion',
@@ -6050,7 +6050,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 465,
+      id: 466,
       name: 'Psychic Crush (UA)',
       level: 6,
       school: 'Enchantment',
@@ -6063,7 +6063,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 466,
+      id: 467,
       name: 'Scatter',
       level: 6,
       school: 'Conjuration',
@@ -6076,7 +6076,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 467,
+      id: 468,
       name: 'Soul Cage',
       level: 6,
       school: 'Necromancy',
@@ -6089,7 +6089,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 468,
+      id: 469,
       name: 'Summon Fiend',
       level: 6,
       school: 'Conjuration',
@@ -6102,7 +6102,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 469,
+      id: 470,
       name: 'Sunbeam',
       level: 6,
       school: 'Evocation',
@@ -6115,7 +6115,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 470,
+      id: 471,
       name: 'Tasha\'s Otherworldly Guise',
       level: 6,
       school: 'Transmutation',
@@ -6128,7 +6128,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 471,
+      id: 472,
       name: 'Tenser\'s Transformation',
       level: 6,
       school: 'Transmutation',
@@ -6141,7 +6141,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 472,
+      id: 473,
       name: 'Transport via Plants',
       level: 6,
       school: 'Conjuration',
@@ -6154,7 +6154,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 473,
+      id: 474,
       name: 'True Seeing',
       level: 6,
       school: 'Divination',
@@ -6167,7 +6167,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 474,
+      id: 475,
       name: 'Wall of Ice',
       level: 6,
       school: 'Evocation',
@@ -6180,7 +6180,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 475,
+      id: 476,
       name: 'Wall of Thorns',
       level: 6,
       school: 'Conjuration',
@@ -6193,7 +6193,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 476,
+      id: 477,
       name: 'Widogast\'s Transmogrification (HB)',
       level: 6,
       school: 'Transmutation',
@@ -6206,7 +6206,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 477,
+      id: 478,
       name: 'Wind Walk',
       level: 6,
       school: 'Transmutation',
@@ -6219,7 +6219,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 478,
+      id: 479,
       name: 'Word of Recall',
       level: 6,
       school: 'Conjuration',
@@ -6232,7 +6232,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 479,
+      id: 480,
       name: 'Conjure Celestial',
       level: 7,
       school: 'Conjuration',
@@ -6245,7 +6245,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 480,
+      id: 481,
       name: 'Conjure Hezrou (UA)',
       level: 7,
       school: 'Conjuration',
@@ -6258,7 +6258,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 481,
+      id: 482,
       name: 'Create Magen',
       level: 7,
       school: 'Transmutation',
@@ -6271,7 +6271,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 482,
+      id: 483,
       name: 'Crown Of Stars',
       level: 7,
       school: 'Conjuration',
@@ -6284,7 +6284,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 483,
+      id: 484,
       name: 'Delayed Blast Fireball',
       level: 7,
       school: 'Evocation',
@@ -6297,7 +6297,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 484,
+      id: 485,
       name: 'Divine Word',
       level: 7,
       school: 'Evocation',
@@ -6310,7 +6310,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 485,
+      id: 486,
       name: 'Draconic Transformation (UA)',
       level: 7,
       school: 'Transmutation',
@@ -6323,7 +6323,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 486,
+      id: 487,
       name: 'Dream of the Blue Veil',
       level: 7,
       school: 'Conjuration',
@@ -6336,7 +6336,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 487,
+      id: 488,
       name: 'Etherealness',
       level: 7,
       school: 'Transmutation',
@@ -6349,7 +6349,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 488,
+      id: 489,
       name: 'Finger of Death',
       level: 7,
       school: 'Necromancy',
@@ -6362,7 +6362,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 489,
+      id: 490,
       name: 'Fire Storm',
       level: 7,
       school: 'Evocation',
@@ -6375,7 +6375,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 490,
+      id: 491,
       name: 'Forcecage',
       level: 7,
       school: 'Evocation',
@@ -6388,7 +6388,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 491,
+      id: 492,
       name: 'Mirage Arcane',
       level: 7,
       school: 'Illusion',
@@ -6401,7 +6401,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 492,
+      id: 493,
       name: 'Mordenkainen\'s Magnificent Mansion',
       level: 7,
       school: 'Conjuration',
@@ -6414,7 +6414,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 493,
+      id: 494,
       name: 'Mordenkainen\'s Sword',
       level: 7,
       school: 'Evocation',
@@ -6427,7 +6427,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 494,
+      id: 495,
       name: 'Plane Shift',
       level: 7,
       school: 'Conjuration',
@@ -6440,7 +6440,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 495,
+      id: 496,
       name: 'Power Word: Pain',
       level: 7,
       school: 'Enchantment',
@@ -6453,7 +6453,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 496,
+      id: 497,
       name: 'Prismatic Spray',
       level: 7,
       school: 'Evocation',
@@ -6466,7 +6466,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 497,
+      id: 498,
       name: 'Project Image',
       level: 7,
       school: 'Illusion',
@@ -6479,7 +6479,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 498,
+      id: 499,
       name: 'Regenerate',
       level: 7,
       school: 'Transmutation',
@@ -6492,7 +6492,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 499,
+      id: 500,
       name: 'Resurrection',
       level: 7,
       school: 'Necromancy',
@@ -6505,7 +6505,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 500,
+      id: 501,
       name: 'Reverse Gravity',
       level: 7,
       school: 'Transmutation',
@@ -6518,7 +6518,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 501,
+      id: 502,
       name: 'Sequester',
       level: 7,
       school: 'Transmutation',
@@ -6531,7 +6531,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 502,
+      id: 503,
       name: 'Simulacrum',
       level: 7,
       school: 'Illusion',
@@ -6544,7 +6544,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 503,
+      id: 504,
       name: 'Symbol',
       level: 7,
       school: 'Abjuration',
@@ -6557,7 +6557,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 504,
+      id: 505,
       name: 'Teleport',
       level: 7,
       school: 'Conjuration',
@@ -6570,7 +6570,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 505,
+      id: 506,
       name: 'Temple of the Gods',
       level: 7,
       school: 'Conjuration',
@@ -6583,7 +6583,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 506,
+      id: 507,
       name: 'Tether Essence',
       level: 7,
       school: 'Necromancy',
@@ -6596,7 +6596,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 507,
+      id: 508,
       name: 'Whirlwind',
       level: 7,
       school: 'Evocation',
@@ -6609,7 +6609,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 508,
+      id: 509,
       name: 'Abi-Dalzim\'s Horrid Wilting',
       level: 8,
       school: 'Necromancy',
@@ -6622,7 +6622,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 509,
+      id: 510,
       name: 'Animal Shapes',
       level: 8,
       school: 'Transmutation',
@@ -6635,7 +6635,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 510,
+      id: 511,
       name: 'Antimagic Field',
       level: 8,
       school: 'Abjuration',
@@ -6648,7 +6648,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 511,
+      id: 512,
       name: 'Antipathy/Sympathy',
       level: 8,
       school: 'Enchantment',
@@ -6661,7 +6661,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 512,
+      id: 513,
       name: 'Clone',
       level: 8,
       school: 'Necromancy',
@@ -6674,7 +6674,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 513,
+      id: 514,
       name: 'Control Weather',
       level: 8,
       school: 'Transmutation',
@@ -6687,7 +6687,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 514,
+      id: 515,
       name: 'Dark Star',
       level: 8,
       school: 'Evocation',
@@ -6700,7 +6700,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 515,
+      id: 516,
       name: 'Demiplane',
       level: 8,
       school: 'Conjuration',
@@ -6713,7 +6713,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 516,
+      id: 517,
       name: 'Dominate Monster',
       level: 8,
       school: 'Enchantment',
@@ -6726,7 +6726,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 517,
+      id: 518,
       name: 'Earthquake',
       level: 8,
       school: 'Evocation',
@@ -6739,7 +6739,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 518,
+      id: 519,
       name: 'Feeblemind',
       level: 8,
       school: 'Enchantment',
@@ -6752,7 +6752,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 519,
+      id: 520,
       name: 'Glibness',
       level: 8,
       school: 'Transmutation',
@@ -6765,7 +6765,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 520,
+      id: 521,
       name: 'Holy Aura',
       level: 8,
       school: 'Abjuration',
@@ -6778,7 +6778,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 521,
+      id: 522,
       name: 'Illusory Dragon',
       level: 8,
       school: 'Illusion',
@@ -6791,7 +6791,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 522,
+      id: 523,
       name: 'Incendiary Cloud',
       level: 8,
       school: 'Conjuration',
@@ -6804,7 +6804,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 523,
+      id: 524,
       name: 'Maddening Darkness',
       level: 8,
       school: 'Evocation',
@@ -6817,7 +6817,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 524,
+      id: 525,
       name: 'Maze',
       level: 8,
       school: 'Conjuration',
@@ -6830,7 +6830,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 525,
+      id: 526,
       name: 'Mighty Fortress',
       level: 8,
       school: 'Conjuration',
@@ -6843,7 +6843,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 526,
+      id: 527,
       name: 'Mind Blank',
       level: 8,
       school: 'Abjuration',
@@ -6856,7 +6856,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 527,
+      id: 528,
       name: 'Power Word: Stun',
       level: 8,
       school: 'Enchantment',
@@ -6869,7 +6869,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 528,
+      id: 529,
       name: 'Reality Break',
       level: 8,
       school: 'Conjuration',
@@ -6882,7 +6882,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 529,
+      id: 530,
       name: 'Sunburst',
       level: 8,
       school: 'Evocation',
@@ -6895,7 +6895,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 530,
+      id: 531,
       name: 'Telepathy',
       level: 8,
       school: 'Evocation',
@@ -6908,7 +6908,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 531,
+      id: 532,
       name: 'Tsunami',
       level: 8,
       school: 'Conjuration',
@@ -6921,7 +6921,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 532,
+      id: 533,
       name: 'Astral Projection',
       level: 9,
       school: 'Evocation',
@@ -6934,7 +6934,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 533,
+      id: 534,
       name: 'Blade of Disaster',
       level: 9,
       school: 'Conjuration',
@@ -6947,7 +6947,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 534,
+      id: 535,
       name: 'Foresight',
       level: 9,
       school: 'Divination',
@@ -6960,7 +6960,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 535,
+      id: 536,
       name: 'Gate',
       level: 9,
       school: 'Conjuration',
@@ -6973,7 +6973,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 536,
+      id: 537,
       name: 'Imprisonment',
       level: 9,
       school: 'Abjuration',
@@ -6986,7 +6986,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 537,
+      id: 538,
       name: 'Invulnerability',
       level: 9,
       school: 'Abjuration',
@@ -6999,7 +6999,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 538,
+      id: 539,
       name: 'Mass Heal',
       level: 9,
       school: 'Evocation',
@@ -7012,7 +7012,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 539,
+      id: 540,
       name: 'Mass Polymorph',
       level: 9,
       school: 'Transmutation',
@@ -7025,7 +7025,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 540,
+      id: 541,
       name: 'Meteor Swarm',
       level: 9,
       school: 'Evocation',
@@ -7038,7 +7038,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 541,
+      id: 542,
       name: 'Power Word: Heal',
       level: 9,
       school: 'Evocation',
@@ -7051,7 +7051,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 542,
+      id: 543,
       name: 'Power Word: Kill',
       level: 9,
       school: 'Enchantment',
@@ -7064,7 +7064,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 543,
+      id: 544,
       name: 'Prismatic Wall',
       level: 9,
       school: 'Abjuration',
@@ -7077,7 +7077,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 544,
+      id: 545,
       name: 'Psychic Scream',
       level: 9,
       school: 'Enchantment',
@@ -7090,7 +7090,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 545,
+      id: 546,
       name: 'Ravenous Void',
       level: 9,
       school: 'Evocation',
@@ -7103,7 +7103,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 546,
+      id: 547,
       name: 'Shapechange',
       level: 9,
       school: 'Transmutation',
@@ -7116,7 +7116,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 547,
+      id: 548,
       name: 'Storm of Vengeance',
       level: 9,
       school: 'Conjuration',
@@ -7129,7 +7129,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 548,
+      id: 549,
       name: 'Time Ravage',
       level: 9,
       school: 'Necromancy',
@@ -7142,7 +7142,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 549,
+      id: 550,
       name: 'Time Stop',
       level: 9,
       school: 'Transmutation',
@@ -7155,7 +7155,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 550,
+      id: 551,
       name: 'True Polymorph',
       level: 9,
       school: 'Transmutation',
@@ -7168,7 +7168,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 551,
+      id: 552,
       name: 'True Resurrection',
       level: 9,
       school: 'Necromancy',
@@ -7181,7 +7181,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 552,
+      id: 553,
       name: 'Weird',
       level: 9,
       school: 'Illusion',
@@ -7194,7 +7194,7 @@ module.exports = {
       updatedAt: new Date()
     },
 {
-      id: 553,
+      id: 554,
       name: 'Wish',
       level: 9,
       school: 'Conjuration',

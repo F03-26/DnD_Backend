@@ -131,6 +131,36 @@ router.get('/weapons/:id', async(req, res) => {
     }
 });
 
+router.get('/spells/all', async (req, res) => {
+    try {
+        const classesWithSpells = await req.orm.Class.findAll({
+            include: {
+                model: req.orm.Spell,
+                through: { attributes: [] }
+            },
+            order: [['id', 'ASC']]
+        });
+        const filtered = classesWithSpells.filter(cls => cls.Spells && cls.Spells.length > 0);
+
+        const result = filtered.map(cls => {
+            const obj = cls.toJSON();
+            delete obj.Spells;
+            return obj;
+        });
+
+        if(result.length > 0){
+            res.status(200).json(result);
+        }
+        else{
+            res.status(404).json({ error: 'No classes with spells found' });
+        }
+    }
+    catch(error){
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
+    }
+});
+
 // Actualizar clase
 router.put('/:id', async(req, res) => {
     try{

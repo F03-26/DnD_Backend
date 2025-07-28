@@ -40,4 +40,22 @@ router.get('/search', async (req, res) => {
     }
 });
 
+router.get('/class/:classId', async (req, res) => {
+    try {
+        const spellsClass = await req.orm.ClassesSpells.findAll({
+            where: { class_id: req.params.classId },
+            include: [{ model: req.orm.Spell }]
+        });
+        if (spellsClass.length > 0) {
+            const spells = spellsClass.map(cs => cs.Spell);
+            res.status(200).json(spells);
+        } else {
+            res.status(404).json({ error: 'Spells not found for this class' });
+        }
+    } catch (error) {
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
+    }
+});
+
 module.exports = router;
