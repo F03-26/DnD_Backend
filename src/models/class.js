@@ -31,6 +31,19 @@ module.exports = (sequelize, DataTypes) => {
         onDelete: 'SET NULL'
       });
 
+      this.hasMany(models.ClassesLevelSpells, {
+        foreignKey: 'class_id',
+        onDelete: 'CASCADE'
+      });
+      this.hasMany(models.ClassFeatureValues, {
+        foreignKey: 'class_id',
+        onDelete: 'CASCADE'
+      });
+      this.hasMany(models.Features,{
+        foreignKey: 'class_id',
+        onDelete: 'CASCADE'
+      })
+
       this.belongsToMany(models.Abilities, {through: models.ClassesAbilities, foreignKey: 'class_id', otherKey: 'ability_id'});
       this.belongsToMany(models.Armor, {through: models.ClassesArmor, foreignKey: 'class_id', otherKey: 'armor_id'});
       this.belongsToMany(models.Weapons, {through: models.ClassesWeapons, foreignKey: 'class_id', otherKey: 'weapon_id'});
@@ -51,7 +64,10 @@ module.exports = (sequelize, DataTypes) => {
     weapon_profs: DataTypes.STRING,
     armor_train: DataTypes.STRING,
     tool_profs: DataTypes.STRING,
-    start_equip: DataTypes.STRING
+    start_equip: DataTypes.STRING,
+    feature_1: DataTypes.STRING,
+    feature_2: DataTypes.STRING,
+    feature_3: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Class',

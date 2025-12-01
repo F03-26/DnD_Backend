@@ -27,6 +27,9 @@ module.exports = {
       armor_train: 'Ligera,Media,Pesada,Escudo',
       tool_profs: null,
       start_equip: '1 Cota de malla, 1 Espadón, 1 Flagelo, 8 Jabalinas, 1 Paqute de explorador de mazmorras, 4 GP; 1 Armadura de cuero tachonado, 1 Cimitarra, 1 Espada corta, 1 Arco largo, 20 Flechas, 1 Carcaj, 1 Paquete de explorador de mazmorras y 11 GP;155 GP',
+      feature_1: 'Tomar Aliento',
+      feature_2: 'Maestría con Armas',
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -43,6 +46,9 @@ module.exports = {
       armor_train: 'Ligera',
       tool_profs: '1,Herramientas de ladrón',
       start_equip: '1 Armadura de cuero, 2 Dagas, 1 Espada corta, 1 Arco corto, 20 Flechas, 1 Carcaj, 1 Herramientas de ladrón, 1 Paquete de ladrón, 8 GP;100 GP',
+      feature_1: 'Ataque Furtivo',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -59,6 +65,9 @@ module.exports = {
       armor_train: null,
       tool_profs: null,
       start_equip: '2 Dagas, 1 Canalizador Arcano, 1 Túnica, 1 Libro de Conjuros, 1 Paquete de erudito, 5 GP;55 GP',
+      feature_1: null,
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -75,6 +84,9 @@ module.exports = {
       armor_train: 'Ligera,Media,Escudo',
       tool_profs: null,
       start_equip: '1 Cota de malla, 1 Escudo, 1 Maza, 1 Símbolo sagrado, 1 Paquete de sacerdote, 7 GP;110 GP',
+      feature_1: 'Canalizar Divinidad',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -91,6 +103,9 @@ module.exports = {
       armor_train: 'Ligera,Media,Escudo',
       tool_profs: null,
       start_equip: '1 Hacha a dos manos, 4 Hachas de mano, 1 Paquete de explorador, 15 GP;7 GP',
+      feature_1: 'N° de Furias',
+      feature_2: 'Daño por Furia',
+      feature_3: 'Maestría con Armas',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -107,6 +122,9 @@ module.exports = {
       armor_train: 'Ligera,Media,Escudo',
       tool_profs: null,
       start_equip: '1 Armadura de cuero tachonada, 1 Cimitarra, 1 Espada corta, 1 Arco largo, 20 flechas, 1 Carcaj, 1 Canalizador druídico, 1 Paquete de explorador, 7 GP;150 GP',
+      feature_1: 'Enemigo Predilecto',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -123,6 +141,9 @@ module.exports = {
       armor_train: null,
       tool_profs: null,
       start_equip: '1 Lanza, 2 Dagas, 1 Canalizador Arcano, 1 Paquete de explorador de mazmorras, 28 GP;50 GP',
+      feature_1: 'Puntos de Hechicería',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -139,6 +160,9 @@ module.exports = {
       armor_train: null,
       tool_profs: '1,Herramientas de artesano;1,Instrumento musical',
       start_equip: '1 Lanza, 5 dagas, 1 herramientas de artesano o instrumento musical, 1 Paquete de explorador, 11 GP;50 GP',
+      feature_1: 'Artes Marciales',
+      feature_2: 'Puntos de Concentración',
+      feature_3: 'Movimiento Sin Armadura',
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -155,6 +179,9 @@ module.exports = {
       armor_train: 'Ligera,Media,Pesada,Escudo',
       tool_profs: null,
       start_equip: '1 Cota de malla, 1 Escudo, 1 Espada larga, 6 Jabalinas, 1 Símbolo sagrado, 1 Paquete de sacerdote, 9 GP;150 GP',
+      feature_1: 'Canalizar Divinidad',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -171,6 +198,9 @@ module.exports = {
       armor_train: 'Ligera,Escudo',
       tool_profs: '1,Útiles de herborista',
       start_equip: '1 Armadura de cuero, 1 Escudo, 1 Hoz, 1 Canalizador druídico, 1 Paquete de explorador, Útiles de herborista, 9 GP;50 GP',
+      feature_1: 'Forma Salvaje',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -187,6 +217,9 @@ module.exports = {
       armor_train: 'Ligera',
       tool_profs: '1,Útiles de herborista',
       start_equip: '1 Armadura de cuero, 1 Hoz, 2 Dagas, 1 Canalizador Arcano, 1 Libro de conocimiento sobrenatural, 1 Paquete de Erudito, 15 GP;100 GP',
+      feature_1: 'Invocaciones Sobrenaturales',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
@@ -203,18 +236,15 @@ module.exports = {
       armor_train: 'Ligera',
       tool_profs: '3,Instrumento musical',
       start_equip: '1 Armadura de cuero, 2 Dagas, 1 Instrumento a elección, 1 Paquete de artista, 19 GP;90 GP',
+      feature_1: 'Dado Bárdico',
+      feature_2: null,
+      feature_3: null,
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
     await queryInterface.bulkDelete('Classes', null, {});
   }
 };

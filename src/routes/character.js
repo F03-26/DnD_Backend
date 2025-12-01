@@ -72,7 +72,7 @@ router.get('/:id', async(req, res) => {
 
             include: [
             {
-                model: req.orm.Class,
+                model: req.orm.Class
             },
             {
                 model: req.orm.Race,
@@ -136,7 +136,7 @@ router.get('/:id', async(req, res) => {
             {
                 model: req.orm.AbilityScore,
                 as: 'charisma',
-            }
+            },
         ]
         });
         
@@ -181,6 +181,23 @@ router.get('/:id', async(req, res) => {
             const character = req.orm.Character.findByPk(req.params.id);
             if(character){
                 await character.update({hit_points: req.body});
+                res.status(200).json(character);
+            }
+            else{
+                res.status(404).json({error: 'character not found'});
+            }
+        }
+        catch(error){
+            console.log(error.message);
+            res.status(400).json({error: error.message});
+        }
+    })
+
+    router.delete('/:id', async(req, res) => {
+        try{
+            const character = await req.orm.Character.findByPk(req.params.id);
+            if(character){
+                await character.destroy();
                 res.status(200).json(character);
             }
             else{
