@@ -69,6 +69,15 @@ module.exports = {
       start_equip: {
         type: Sequelize.STRING
       },
+      feature_1:{
+        type: Sequelize.STRING
+      },
+      feature_2:{
+        type: Sequelize.STRING
+      },
+      feature_3:{
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -35,13 +35,49 @@ router.get('/', async(req, res) => {
 // Ver clase específica
 router.get('/:id', async(req, res) => {
     try{
-        const class_ = await req.orm.Class.findByPk(req.params.id);
+        const class_ = await req.orm.Class.findByPk(req.params.id, 
+            {include: [
+                    {
+                        model: req.orm.Features
+                    },
+                    {
+                        model: req.orm.ClassFeatureValues
+                    },
+                    {
+                        model: req.orm.ClassesLevelSpells
+                    }
+                ]}
+        );
 
         if(class_){
             res.status(200).json(class_);
         }
         else{
             res.status(404).json({ error: 'Class not found' });
+        }
+    }
+    catch(error){
+        console.log(error.message);
+        res.status(400).json({ error: error.message });
+    }
+});
+
+// Ver conjuros por nivel
+router.get('/spells/levels/:id', async(req, res) => {
+    try{
+        const spellsLevels = await req.orm.ClassesLevelSpells.findAll({
+            where: {
+                class_id: req.params.id,
+            }
+        });
+
+        console.log("==================================", spellsLevels);
+
+        if(spellsLevels != []){
+            res.status(200).json(spellsLevels);
+        }
+        else{
+            res.status(404);
         }
     }
     catch(error){
