@@ -5,11 +5,11 @@ const { Op } = require('sequelize');
 router.post('/', async(req, res) => {
     try{
         const character = await req.orm.Character.create(req.body);
-        res.status(201).json(character)
+        return res.status(201).json(character)
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({error: error.message});
+        return res.status(400).json({error: error.message});
     }
 });
 
@@ -51,15 +51,15 @@ router.get('/', async(req, res) => {
         });
         
         if(characters != []){
-            res.status(200).json(characters);
+            return res.status(200).json(characters);
         }
         else{
-            res.status(404).json({error: "Characters not found"});
+            return res.status(404).json({error: "Characters not found"});
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({error: error.message});
+        return res.status(400).json({error: error.message});
     }
 });
 
@@ -141,7 +141,7 @@ router.get('/:id', async(req, res) => {
         });
         
         if(characters != []){
-            res.status(200).json(characters);
+            return res.status(200).json(characters);
         }
         else{
             ctx.throw(404);
@@ -149,66 +149,67 @@ router.get('/:id', async(req, res) => {
     }
     catch(error){
         console.log(error.message);
+        return res.status(400).json(error);
     }
 });
 
-    router.get('/user/:id', async(req, res) => {
-        try{
-            const characters = await req.orm.Character.findAll({
-                where: {
-                    uid: req.params.id
-                },
-                include: [{
-                    model: req.orm.Class,
-                },{
-                    model: req.orm.Race,
-                }]
-            });
-            if(characters != []){
-                res.status(200).json(characters);
-            }
-            else{
-                res.status(404).json({error: "Characters not found"});
-            }
+router.get('/user/:id', async(req, res) => {
+    try{
+        const characters = await req.orm.Character.findAll({
+            where: {
+                uid: req.params.id
+            },
+            include: [{
+                model: req.orm.Class,
+            },{
+                model: req.orm.Race,
+            }]
+        });
+        if(characters != []){
+            return res.status(200).json(characters);
         }
-        catch(error){
-            console.log(error.message);
-            res.status(400).json({error: error.message});
+        else{
+            return res.status(404).json({error: "Characters not found"});
         }
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({error: error.message});
+    }
+});
 
-    router.put('/:id/hp', async(req, res) => {
-        try{
-            const character = req.orm.Character.findByPk(req.params.id);
-            if(character){
-                await character.update({hit_points: req.body});
-                res.status(200).json(character);
-            }
-            else{
-                res.status(404).json({error: 'character not found'});
-            }
+router.put('/:id/hp', async(req, res) => {
+    try{
+        const character = req.orm.Character.findByPk(req.params.id);
+        if(character){
+            await character.update({hit_points: req.body});
+            return res.status(200).json(character);
         }
-        catch(error){
-            console.log(error.message);
-            res.status(400).json({error: error.message});
+        else{
+            return res.status(404).json({error: 'character not found'});
         }
-    })
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({error: error.message});
+    }
+});
 
-    router.delete('/:id', async(req, res) => {
-        try{
-            const character = await req.orm.Character.findByPk(req.params.id);
-            if(character){
-                await character.destroy();
-                res.status(200).json(character);
-            }
-            else{
-                res.status(404).json({error: 'character not found'});
-            }
+router.delete('/:id', async(req, res) => {
+    try{
+        const character = await req.orm.Character.findByPk(req.params.id);
+        if(character){
+            await character.destroy();
+            return res.status(200).json(character);
         }
-        catch(error){
-            console.log(error.message);
-            res.status(400).json({error: error.message});
+        else{
+            return res.status(404).json({error: 'character not found'});
         }
-    })
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({error: error.message});
+    }
 });
 
 module.exports = router;

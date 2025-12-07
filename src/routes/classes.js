@@ -5,11 +5,11 @@ const { Op } = require('sequelize');
 router.post('/', async(req, res) => {
     try{
         const class_ = await req.orm.Class.create(req.body);
-        res.status(201).json(class_);
+        return res.status(201).json(class_);
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -21,14 +21,14 @@ router.get('/', async(req, res) => {
         });
         
         if(classes != []){
-            res.status(200).json(classes);
+            return res.status(200).json(classes);
         }
         else{
-            res.status(404).json({ error: 'Classes not found' });
+            return res.status(404).json({ error: 'Classes not found' });
         }
     }
     catch(error){
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -50,15 +50,15 @@ router.get('/:id', async(req, res) => {
         );
 
         if(class_){
-            res.status(200).json(class_);
+            return res.status(200).json(class_);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -74,15 +74,15 @@ router.get('/spells/levels/:id', async(req, res) => {
         console.log("==================================", spellsLevels);
 
         if(spellsLevels != []){
-            res.status(200).json(spellsLevels);
+            return res.status(200).json(spellsLevels);
         }
         else{
-            res.status(404);
+            return res.status(404);
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -101,15 +101,15 @@ router.get('/abilities/:id', async(req, res) => {
         });
 
         if(abilities != []){
-            res.status(200).json(abilities);
+            return res.status(200).json(abilities);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -128,15 +128,15 @@ router.get('/armor/:id', async(req, res) => {
         });
 
         if(armors != []){
-            res.status(200).json(armors);
+            return res.status(200).json(armors);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -155,15 +155,15 @@ router.get('/weapons/:id', async(req, res) => {
         });
 
         if(weapons != []){
-            res.status(200).json(weapons);
+            return res.status(200).json(weapons);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -185,15 +185,15 @@ router.get('/spells/all', async (req, res) => {
         });
 
         if(result.length > 0){
-            res.status(200).json(result);
+            return res.status(200).json(result);
         }
         else{
-            res.status(404).json({ error: 'No classes with spells found' });
+            return res.status(404).json({ error: 'No classes with spells found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -204,15 +204,15 @@ router.put('/:id', async(req, res) => {
 
         if(class_){
             await class_.update(req.body);
-            res.status(200).json(class_);
+            return res.status(200).json(class_);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
@@ -223,15 +223,15 @@ router.delete('/:id', async(req, res) => {
 
         if(class_){
             await class_.destroy();
-            res.status(204).json(class_);
+            return res.status(204).json(class_);
         }
         else{
-            res.status(404).json({ error: 'Class not found' });
+            return res.status(404).json({ error: 'Class not found' });
         }
     }
     catch(error){
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 
