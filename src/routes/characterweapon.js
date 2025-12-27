@@ -13,6 +13,31 @@ router.post('/', async(req, res) => {
     }
 });
 
+router.get('/', async(req, res) => {
+    try{
+        const weapons = await req.orm.CharacterWeapon.findAll();
+        return res.status(200).json(weapons);
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({ error: error.message });
+    }
+});
+
+router.get('/:id', async(req, res) => {
+    try{
+        const weapon = await req.orm.CharacterWeapon.findByPk(req.params.id);
+        if(weapon){
+            return res.status(200).json(weapon);
+        }
+        return res.status(404).json({error: "Weapon not found"});
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({ error: error.message });
+    }
+});
+
 router.delete('/:id', async(req, res) => {
     try{
         const weapon = await req.orm.CharacterWeapon.findOne({where: {id: req.params.id}});

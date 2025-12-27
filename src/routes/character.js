@@ -96,7 +96,7 @@ router.get('/:id', async(req, res) => {
             },
             {
                 model: req.orm.Gear,
-                through: {attributes: []},
+                through: {attributes: ['id', 'amount']},
             },
             {
                 model: req.orm.Spell,
@@ -142,7 +142,6 @@ router.get('/:id', async(req, res) => {
         });
         
         if(characters != []){
-            // convert to plain object so we can modify the weapons array
             const charObj = characters.toJSON ? characters.toJSON() : characters;
 
             if(Array.isArray(charObj.Weapons)){
@@ -150,6 +149,15 @@ router.get('/:id', async(req, res) => {
                     const assocId = w.CharacterWeapon && w.CharacterWeapon.id ? w.CharacterWeapon.id : null;
                     const { CharacterWeapon, ...weaponWithoutThrough } = w;
                     return { ...weaponWithoutThrough, association_id: assocId };
+                });
+            }
+
+            if(Array.isArray(charObj.Gears)){
+                charObj.Gears = charObj.Gears.map(g => {
+                    const assocId = g.CharacterGear && g.CharacterGear.id ? g.CharacterGear.id : null;
+                    const amount = g.CharacterGear && g.CharacterGear.amount ? g.CharacterGear.amount : null;
+                    const { CharacterGear, ...gearWithoutThrough } = g;
+                    return { ...gearWithoutThrough, association_id: assocId, amount: amount };
                 });
             }
 
