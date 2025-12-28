@@ -215,6 +215,23 @@ router.put('/:id/hp', async(req, res) => {
     }
 });
 
+router.patch('/:id', async(req, res) => {
+    try{
+        const character = await req.orm.Character.findByPk(req.params.id);
+        if(character){
+            await character.update(req.body);
+            return res.status(200).json(character);
+        }
+        else{
+            return res.status(404).json({error: 'character not found'});
+        }
+    }
+    catch(error){
+        console.log(error.message);
+        return res.status(400).json({error: error.message});
+    }
+});
+
 router.delete('/:id', async(req, res) => {
     try{
         const character = await req.orm.Character.findByPk(req.params.id);
