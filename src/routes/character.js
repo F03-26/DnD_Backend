@@ -82,9 +82,14 @@ router.get('/:id', async(req, res) => {
                 through: {attributes: []},
             },
             {
-                // include the join-table id so we can expose it as association_id
                 model: req.orm.Weapons,
                 through: {attributes: ['id']},
+                include: [
+                    {
+                        model: req.orm.Properties,
+                        through: { attributes: ['values'] }
+                    }
+                ]
             },
             {
                 model: req.orm.Feat,
@@ -147,6 +152,15 @@ router.get('/:id', async(req, res) => {
             if(Array.isArray(charObj.Weapons)){
                 charObj.Weapons = charObj.Weapons.map(w => {
                     const assocId = w.CharacterWeapon && w.CharacterWeapon.id ? w.CharacterWeapon.id : null;
+
+                    if(Array.isArray(w.Properties)){
+                        w.Properties = w.Properties.map(p => {
+                            const values = p.WeaponsProperties && p.WeaponsProperties.values ? p.WeaponsProperties.values : null;
+                            const { WeaponsProperties, ...propWithoutThrough } = p;
+                            return { ...propWithoutThrough, values: values };
+                        });
+                    }
+
                     const { CharacterWeapon, ...weaponWithoutThrough } = w;
                     return { ...weaponWithoutThrough, association_id: assocId };
                 });

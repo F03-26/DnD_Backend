@@ -17,13 +17,34 @@ router.post('/', async(req, res) => {
 // Ver todas las armas
 router.get('/', async(req, res) => {
     try{
-        const weapons = await req.orm.Weapons.findAll();
-        
-        if(weapons != []){
-            res.status(200).json(weapons);
-        }
-        else{
-            res.status(404).json({ error: 'Weapons not found' });
+        const weapons = await req.orm.Weapons.findAll({
+            include: [
+                {
+                    model: req.orm.Properties,
+                    through: { attributes: ['values'] }
+                }
+            ]
+        });
+
+        if (weapons && weapons.length > 0) {
+            let weaponsObj = weapons.map(w => (typeof w.toJSON === 'function' ? w.toJSON() : w));
+
+            weaponsObj = weaponsObj.map(w => {
+                if (Array.isArray(w.Properties)) {
+                    w.Properties = w.Properties.map(p => {
+                        const values = p.WeaponsProperties && p.WeaponsProperties.values ? p.WeaponsProperties.values : null;
+                        const { WeaponsProperties, through, parent, ...propWithoutThrough } = p;
+                        return { ...propWithoutThrough, values };
+                    });
+                }
+
+                const { through, ...weaponWithoutThrough } = w;
+                return { ...weaponWithoutThrough };
+            });
+
+            return res.status(200).json(weaponsObj);
+        } else {
+            return res.status(404).json({ error: 'Weapons not found' });
         }
     }
     catch(error){
@@ -35,7 +56,14 @@ router.get('/', async(req, res) => {
 // Ver arma específica por id
 router.get('/:id', async(req, res) => {
     try{
-        const weapon = await req.orm.Weapons.findByPk(req.params.id);
+        const weapon = await req.orm.Weapons.findByPk(req.params.id, {
+            include: [
+                {
+                    model: req.orm.Properties,
+                    through: { attributes: [] }
+                }
+            ]
+        });
 
         if(weapon){
             res.status(200).json(weapon);
@@ -94,7 +122,7 @@ router.put('/:id', async(req, res) => {
 // Eliminar arma
 router.delete('/:id', async(req, res) => {
     try{
-        const weapon = await ctx.orm.Weapons.findByPk(req.params.id);
+        const weapon = await req.orm.Weapons.findByPk(req.params.id);
 
         if(weapon){
             await weapon.destroy();
