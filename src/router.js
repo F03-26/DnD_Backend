@@ -15,6 +15,7 @@ const alignment = require('./routes/alignments.js');
 const proficiencies = require('./routes/proficiencies.js');
 const spells = require('./routes/spells.js');
 const character = require('./routes/character.js');
+const levels = require("./routes/levels.js");
 
 const classescoins = require("./routes/classescoins.js");
 const classesarmor = require("./routes/classesarmor.js");
@@ -63,6 +64,7 @@ router.use('/alignments', alignment);
 router.use('/proficiencies', proficiencies);
 router.use('/spells', spells);
 router.use('/character', character);
+router.use('/levels', levels);
 
 router.use('/classescoins', classescoins);
 router.use('/classesarmor', classesarmor);
@@ -88,4 +90,4 @@ router.use(authentication);
 
 router.use("/users", jwtMiddleware({secret: process.env.JWT_SECRET, algorithms: ["HS256"]}), users);
 
-module.exports = router; 
+module.exports = router;

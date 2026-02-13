@@ -14,6 +14,18 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Armors', [{
       id: 1,
+      name: 'Sin armadura',
+      category: null,
+      armor_class: 10,
+      strength: 0,
+      stealth_dis: false,
+      weight: 0,
+      cost: null,
+      createdAt: new Date(),
+      updatedAt: new Date()
+      },
+      {
+      id: 2,
       name: 'Armadura acolchada',
       category: 'Ligera',
       armor_class: 11,
@@ -24,7 +36,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 2,
+      id: 3,
       name: 'Armadura de cuero',
       category: 'Ligera',
       armor_class: 11,
@@ -35,7 +47,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 3,
+      id: 4,
       name: 'Armadura de cuero tachonado',
       category: 'Ligera',
       armor_class: 12,
@@ -46,7 +58,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 4,
+      id: 5,
       name: 'Camisa de malla',
       category: 'Media',
       armor_class: 13,
@@ -57,7 +69,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 5,
+      id: 6,
       name: 'Cota de escamas',
       category: 'Media',
       armor_class: 14,
@@ -68,7 +80,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 6,
+      id: 7,
       name: 'Coraza',
       category: 'Media',
       armor_class: 14,
@@ -79,7 +91,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 7,
+      id: 8,
       name: 'Media Armadura',
       category: 'Media',
       armor_class: 15,
@@ -90,7 +102,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 8,
+      id: 9,
       name: 'Armadura de pieles',
       category: 'Media',
       armor_class: 12,
@@ -101,7 +113,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 9,
+      id: 10,
       name: 'Armadura de bandas',
       category: 'Pesada',
       armor_class: 17,
@@ -112,7 +124,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 10,
+      id: 11,
       name: 'Armadura de placas',
       category: 'Pesada',
       armor_class: 18,
@@ -123,7 +135,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 11,
+      id: 12,
       name: 'Cota guarnecida',
       category: 'Pesada',
       armor_class: 14,
@@ -134,7 +146,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 12,
+      id: 13,
       name: 'Cota de malla',
       category: 'Pesada',
       armor_class: 16,
@@ -145,7 +157,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     }, {
-      id: 13,
+      id: 14,
       name: 'Escudo',
       category: 'Escudo',
       armor_class: 2,
@@ -159,13 +171,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-
       await queryInterface.bulkDelete('Armors', null, {});
   }
 };

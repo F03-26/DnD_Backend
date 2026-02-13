@@ -79,7 +79,7 @@ router.get('/:id', async(req, res) => {
             },
             {
                 model: req.orm.Armor,
-                through: {attributes: []},
+                through: {attributes: ['id'], order: [['id', 'ASC']]},
             },
             {
                 model: req.orm.Weapons,
@@ -93,7 +93,7 @@ router.get('/:id', async(req, res) => {
             },
             {
                 model: req.orm.Feat,
-                through: {attributes: []},
+                through: {attributes: ['id']},
             },
             {
                 model: req.orm.Language,
@@ -172,6 +172,22 @@ router.get('/:id', async(req, res) => {
                     const amount = g.CharacterGear && g.CharacterGear.amount ? g.CharacterGear.amount : null;
                     const { CharacterGear, ...gearWithoutThrough } = g;
                     return { ...gearWithoutThrough, association_id: assocId, amount: amount };
+                });
+            }
+
+            if(Array.isArray(charObj.Armors)){
+                charObj.Armors = charObj.Armors.map(a => {
+                    const assocId = a.CharacterArmor && a.CharacterArmor.id ? a.CharacterArmor.id : null;
+                    const { CharacterArmor, ...armorWithoutThrough } = a;
+                    return { ...armorWithoutThrough, association_id: assocId };
+                });
+            }
+
+            if(Array.isArray(charObj.Feats)){
+                charObj.Feats = charObj.Feats.map(f => {
+                    const assocId = f.CharacterFeat && f.CharacterFeat.id ? f.CharacterFeat.id : null;
+                    const { CharacterFeat, ...featWithoutThrough } = f;
+                    return { ...featWithoutThrough, association_id: assocId };
                 });
             }
 

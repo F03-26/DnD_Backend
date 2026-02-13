@@ -71,8 +71,6 @@ router.get('/spells/levels/:id', async(req, res) => {
             }
         });
 
-        console.log("==================================", spellsLevels);
-
         if(spellsLevels != []){
             return res.status(200).json(spellsLevels);
         }
