@@ -41,6 +41,7 @@ const backgroundstool = require("./routes/backgroundstools.js");
 
 const authentication = require("./routes/authentication.js");
 const users = require("./routes/users.js");
+const ai_agent = require("./routes/ai-agent.js");
 
 const { expressjwt: jwtMiddleware } = require("express-jwt");
 const dotenv = require("dotenv");
@@ -91,5 +92,6 @@ router.use('/backgroundstools', requireAuth, backgroundstool);
 router.use(authentication);
 
 router.use("/users", requireAuth, users);
+router.use("/ai-agent", requireAuth, ai_agent);
 
 module.exports = router;
