@@ -109,7 +109,7 @@ router.get('/:id', async(req, res) => {
             },
             {
                 model: req.orm.Tool,
-                through: {attributes: []},
+                through: {attributes: ['id']},
             },
             {
                 model: req.orm.Trait,
@@ -191,6 +191,13 @@ router.get('/:id', async(req, res) => {
                 });
             }
 
+            if(Array.isArray(charObj.Tools)){
+                charObj.Tools = charObj.Tools.map(t => {
+                    const assocId = t.CharacterTool && t.CharacterTool.id ? t.CharacterTool.id : null;
+                    const { CharacterTool, ...toolWithoutThrough } = t;
+                    return { ...toolWithoutThrough, association_id: assocId };
+                });
+            }
             return res.status(200).json(charObj);
         }
         else{

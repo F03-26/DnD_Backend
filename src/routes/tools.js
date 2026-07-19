@@ -17,7 +17,9 @@ router.post('/', async(req, res) => {
 // Ver todas las herramientas
 router.get('/', async(req, res) => {
     try{
-        const tools = await req.orm.Tool.findAll();
+        const tools = await req.orm.Tool.findAll({
+            include: [{model: req.orm.AbilityScore, as: 'Ability'}]
+        });
         
         if(tools != []){
             res.status(200).json(tools);
@@ -56,7 +58,8 @@ router.get('/profesion/:profesion', async(req, res) => {
         const tools = await req.orm.Tool.findAll({
             where: {
                 profesion: req.params.profesion
-            }
+            },
+            include: [{model: req.orm.AbilityScore, as: 'Ability'}]
         });
         
         if(tools != []){

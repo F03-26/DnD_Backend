@@ -60,6 +60,8 @@ This repository has the code for the backend of a Dungeons & Dragons character c
      - DB_HOST ('localhost' to run locally)
      - PORT
      - JWT_SECRET
+     - GOOGLE_API_KEY or GEMINI_API_KEY
+     - GEN_MODEL (optional, default: gemini-1.5)
       
   5. Start server:
   ```bash
