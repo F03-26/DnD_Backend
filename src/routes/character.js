@@ -103,7 +103,7 @@ router.get('/:id', async(req, res) => {
             },
             {
                 model: req.orm.Tool,
-                through: {attributes: []},
+                through: {attributes: ['id']},
             },
             {
                 model: req.orm.Trait,
@@ -141,7 +141,62 @@ router.get('/:id', async(req, res) => {
         });
         
         if(characters != []){
+<<<<<<< Updated upstream
             res.status(200).json(characters);
+=======
+            const charObj = characters.toJSON ? characters.toJSON() : characters;
+
+            if(Array.isArray(charObj.Weapons)){
+                charObj.Weapons = charObj.Weapons.map(w => {
+                    const assocId = w.CharacterWeapon && w.CharacterWeapon.id ? w.CharacterWeapon.id : null;
+
+                    if(Array.isArray(w.Properties)){
+                        w.Properties = w.Properties.map(p => {
+                            const values = p.WeaponsProperties && p.WeaponsProperties.values ? p.WeaponsProperties.values : null;
+                            const { WeaponsProperties, ...propWithoutThrough } = p;
+                            return { ...propWithoutThrough, values: values };
+                        });
+                    }
+
+                    const { CharacterWeapon, ...weaponWithoutThrough } = w;
+                    return { ...weaponWithoutThrough, association_id: assocId };
+                });
+            }
+
+            if(Array.isArray(charObj.Gears)){
+                charObj.Gears = charObj.Gears.map(g => {
+                    const assocId = g.CharacterGear && g.CharacterGear.id ? g.CharacterGear.id : null;
+                    const amount = g.CharacterGear && g.CharacterGear.amount ? g.CharacterGear.amount : null;
+                    const { CharacterGear, ...gearWithoutThrough } = g;
+                    return { ...gearWithoutThrough, association_id: assocId, amount: amount };
+                });
+            }
+
+            if(Array.isArray(charObj.Armors)){
+                charObj.Armors = charObj.Armors.map(a => {
+                    const assocId = a.CharacterArmor && a.CharacterArmor.id ? a.CharacterArmor.id : null;
+                    const { CharacterArmor, ...armorWithoutThrough } = a;
+                    return { ...armorWithoutThrough, association_id: assocId };
+                });
+            }
+
+            if(Array.isArray(charObj.Feats)){
+                charObj.Feats = charObj.Feats.map(f => {
+                    const assocId = f.CharacterFeat && f.CharacterFeat.id ? f.CharacterFeat.id : null;
+                    const { CharacterFeat, ...featWithoutThrough } = f;
+                    return { ...featWithoutThrough, association_id: assocId };
+                });
+            }
+
+            if(Array.isArray(charObj.Tools)){
+                charObj.Tools = charObj.Tools.map(t => {
+                    const assocId = t.CharacterTool && t.CharacterTool.id ? t.CharacterTool.id : null;
+                    const { CharacterTool, ...toolWithoutThrough } = t;
+                    return { ...toolWithoutThrough, association_id: assocId };
+                });
+            }
+            return res.status(200).json(charObj);
+>>>>>>> Stashed changes
         }
         else{
             ctx.throw(404);
