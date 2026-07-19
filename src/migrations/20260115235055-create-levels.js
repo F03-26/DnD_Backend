@@ -2,32 +2,17 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('CharacterGears', {
+    await queryInterface.createTable('Levels', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      character_id: {
-        references: {
-          model: 'Characters',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+      level: {
         type: Sequelize.INTEGER
       },
-      gear_id: {
-        references: {
-          model: 'Gears',
-          key: 'id'
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        type: Sequelize.INTEGER
-      },
-      amount: {
+      xp_start: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -41,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('CharacterGears');
+    await queryInterface.dropTable('Levels');
   }
 };

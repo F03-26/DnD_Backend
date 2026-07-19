@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# DnD_Backend
-=======
 # DnD_Backend
 
 This repository has the code for the backend of a Dungeons & Dragons character creator and database I am making as a personal project with Express.js. It uses data from the official Dungeons & Dragons Player's Handbook 5th Edition 2024, translated to Spanish and with a few additions from older versions. This backend acts as an API for the frontend client in https://github.com/F03-26/DnD-Frontend
@@ -77,4 +74,3 @@ This repository has the code for the backend of a Dungeons & Dragons character c
 Fernando Arévalo
 
 Software Engineering Student @ Pontificia Universidad Católica de Chile
->>>>>>> Stashed changes

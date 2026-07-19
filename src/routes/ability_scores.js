@@ -1,6 +1,6 @@
 const express = require("express");
 const router = new express.Router();
-const { Op } = require('sequelize');
+const { Op, where } = require('sequelize');
 
 // Crear puntucaiones
 router.post('/', async(req, res) => {
@@ -17,7 +17,7 @@ router.post('/', async(req, res) => {
 // Ver puntuaciones
 router.get('/', async(req, res) => {
     try {
-        const ability_scores = await req.orm.AbilityScore.findAll();
+        const ability_scores = await req.orm.AbilityScore.findAll({ where: { base: true }, order: [['id', 'ASC']] });
         if(ability_scores != []){
             res.status(200).json(ability_scores);
         }

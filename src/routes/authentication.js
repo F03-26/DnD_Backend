@@ -70,11 +70,20 @@ router.post('/login', async(req, res) => {
     const isValidPassword = await bcrypt.compare(authInfo.password, user.password)
     
     if(isValidPassword){
-        res.status(200).json({
+        const expirationSeconds = parseInt(process.env.JWT_EXPIRES_IN) || 86400; // 24 horas por defecto
+        const JWT_PRIVATE_KEY = process.env.JWT_SECRET;
+        var token = jwt.sign(
+            {scope: ['user']},
+            JWT_PRIVATE_KEY,
+            {subject: user.id.toString()},
+            {expiresIn: expirationSeconds}
+        );
+        return res.status(200).json({
             id: user.id,
             username: user.username,
             email: user.email,
-            role: user.role
+            role: user.role,
+            token: token
         });
     }
     else{
@@ -82,23 +91,6 @@ router.post('/login', async(req, res) => {
         console.log(`Invalid password for user with email '${authInfo.email}'.`);
         return;
     }
-
-    // JWT
-    const expirationSeconds = 1 * 60 * 60 * 24;
-    const JWT_PRIVATE_KEY = process.env.JWT_SECRET;
-    var token = jwt.sign(
-        {scope: ['user']},
-        JWT_PRIVATE_KEY,
-        {subject: user.id.toString()},
-        {expiresIn: expirationSeconds}
-    );
-    res.status(200).json({
-        id: user.id,
-        username: user.username,
-        email: user.email,
-        role: user.role,
-        token: token
-    });
 });
 
 module.exports = router;

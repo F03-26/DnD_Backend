@@ -9,13 +9,13 @@ router.get('/', async (req, res) => {
             order: [['id', 'ASC']]
         });
         if (spells.length > 0) {
-            res.status(200).json(spells);
+            return res.status(200).json(spells);
         } else {
-            res.status(404).json({ error: 'Spells not found' });
+            return res.status(404).json({ error: 'Spells not found' });
         }
     } catch (error) {
         console.log(error.message);
-        res.status(400).json({ error: error.message });
+        return res.status(400).json({ error: error.message });
     }
 });
 

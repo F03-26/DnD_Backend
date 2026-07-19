@@ -25,5 +25,3 @@ db.sequelize
         console.log(`Listening in port ${PORT}`);
     })
     .catch((error) => { console.log('Unable to connect to the database:', error); });
-
-// module.exports = io;

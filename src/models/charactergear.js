@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   CharacterGear.init({
     character_id: DataTypes.INTEGER,
-    gear_id: DataTypes.INTEGER
+    gear_id: DataTypes.INTEGER,
+    amount: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'CharacterGear',

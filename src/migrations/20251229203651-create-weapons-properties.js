@@ -2,33 +2,34 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('CharacterGears', {
+    await queryInterface.createTable('WeaponsProperties', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      character_id: {
+      weapon_id: {
         references: {
-          model: 'Characters',
+          model: 'Weapons',
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         type: Sequelize.INTEGER
       },
-      gear_id: {
+      property_id: {
         references: {
-          model: 'Gears',
+          model: 'Properties',
           key: 'id'
         },
         onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
+        onDelete: 'CASCADE',
         type: Sequelize.INTEGER
       },
-      amount: {
-        type: Sequelize.INTEGER
+      values: {
+        allowNull: true,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +42,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('CharacterGears');
+    await queryInterface.dropTable('WeaponsProperties');
   }
 };
